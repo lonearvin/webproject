@@ -1,0 +1,10 @@
+app:
+  name: CurrencyExchangeApp
+  port: :8080
+
+database:
+  host: 127.0.0.1
+  port: 3308
+  user: root
+  password: 196618
+  databaseName: test
