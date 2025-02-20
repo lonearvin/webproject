@@ -4,7 +4,11 @@ app:
 
 database:
   host: 127.0.0.1
-  port: 3308
+  port: 3306
   user: root
   password: 196618
   databaseName: test
+
+  MaxIdleConns: 10
+  MaxOpenConns: 100
+  ConnMaxLifetime: 1 # 这里是小时为单位

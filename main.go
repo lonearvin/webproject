@@ -1,18 +1,23 @@
 package main
 
 import (
-	"fmt"
 	"webproject/config"
+	"webproject/router"
 )
+
+type Header struct {
+	MessageKey string
+}
 
 func main() {
 	config.InitConfig()
-	fmt.Println(config.AppConfig.App.Port)
-	r := gin.Default()
-	r.GET("/ping", func(c *gin.Context) {
-		c.JSON(200, gin.H{
-			"message": "pong",
-		})
-	})
-	r.Run(config.AppConfig.App.Port) // listen and serve on 0.0.0.0:8080
+	//fmt.Println(config.AppConfig.App.Port
+	if config.AppConfig.App.Port == "" {
+		config.AppConfig.App.Port = "8080"
+	}
+	r := router.SetRouter()
+	err := r.Run(config.AppConfig.App.Port)
+	if err != nil {
+		return
+	} // listen and serve on 0.0.0.0:8080
 }

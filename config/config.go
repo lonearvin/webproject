@@ -11,11 +11,14 @@ type Config struct {
 		Port string
 	}
 	Database struct {
-		Host         string
-		Port         string
-		User         string
-		Password     string
-		DatabaseName string
+		Host            string
+		Port            string
+		User            string
+		Password        string
+		DatabaseName    string
+		MaxIdleConns    int
+		MaxOpenConns    int
+		ConnMaxLifetime int
 	}
 }
 
@@ -32,4 +35,6 @@ func InitConfig() {
 	}
 	AppConfig = &Config{}
 	err = viper.Unmarshal(AppConfig)
+	// 初始化数据库
+	InitDB()
 }
