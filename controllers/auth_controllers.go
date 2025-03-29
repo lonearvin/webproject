@@ -2,7 +2,9 @@ package controllers
 
 import (
 	"github.com/gin-gonic/gin"
+	"log"
 	"net/http"
+	"os"
 	"webproject/global"
 	"webproject/models"
 	"webproject/utils"
@@ -78,4 +80,16 @@ func Login(ctx *gin.Context) {
 	}
 
 	ctx.JSON(http.StatusOK, gin.H{"token": token})
+}
+
+func Home(ctx *gin.Context) {
+	htmlFilePath := "./template/homepage.html"
+
+	_, err := os.Open(htmlFilePath)
+	if err != nil {
+		log.Printf("Failed to find Html file: %v", err)
+		ctx.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to find HTML file"})
+		return
+	}
+	ctx.File(htmlFilePath)
 }

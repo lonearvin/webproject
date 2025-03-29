@@ -1,20 +1,8 @@
-# webproject
-Go+Gin+Gorm+Vue3+Redis+MySQL
 
-## gin框架的使用
+## 凌图智控（上海）科技有限公司 网站
+工具：go+gin+gorm+vue+nginx+redis+mysql
+# 主分支是main，当前在github上
 
-头信息传递
-```go
-	r.GET("/ping", func(c *gin.Context) {
-		c.JSON(200, header)
-	})
-```
-也可以使用gin自带的
-```go
-	r.GET("/ping", func(c *gin.Context) {
-		c.JSON(200, gin.H{
-			"message": "pong",
-		}
-	})
-```
+
+### 后续将开发的细节和架构的开发文档书写一下
 
