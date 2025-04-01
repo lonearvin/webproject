@@ -1,6 +1,7 @@
 app:
   name: CurrencyExchangeApp
   port: :8080
+  TemplatePath: template/homepage.html   #模板文件所处的位置
 
 database:
   host: 127.0.0.1

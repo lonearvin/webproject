@@ -12,6 +12,7 @@ func SetRouter() *gin.Engine {
 	// 设置静态文件
 	r.Static("/picture", "./picture")
 
+	r.StaticFile("/favicon.ico", "./picture/favicon.ico")
 	r.GET("/", controllers.Home)
 	auth := r.Group("/api/auth")
 	{

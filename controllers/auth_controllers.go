@@ -2,9 +2,7 @@ package controllers
 
 import (
 	"github.com/gin-gonic/gin"
-	"log"
 	"net/http"
-	"os"
 	"webproject/global"
 	"webproject/models"
 	"webproject/utils"
@@ -16,6 +14,7 @@ func Register(ctx *gin.Context) {
 	//    检查是否可以将用户的请求体数据与`User`模型绑定。如果不能绑定（例如数据格式错误），返回HTTP 400 错误，并返回相应的错误信息。
 	if err := ctx.ShouldBind(&user); err != nil {
 		ctx.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		
 		return
 	}
 
@@ -80,16 +79,4 @@ func Login(ctx *gin.Context) {
 	}
 
 	ctx.JSON(http.StatusOK, gin.H{"token": token})
-}
-
-func Home(ctx *gin.Context) {
-	htmlFilePath := "./template/homepage.html"
-
-	_, err := os.Open(htmlFilePath)
-	if err != nil {
-		log.Printf("Failed to find Html file: %v", err)
-		ctx.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to find HTML file"})
-		return
-	}
-	ctx.File(htmlFilePath)
 }
