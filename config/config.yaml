@@ -1,6 +1,7 @@
 app:
   name: CurrencyExchangeApp
   port: :8080
+  TemplatePath: template/homepage.html
 
 database:
   host: 127.0.0.1
