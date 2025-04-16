@@ -8,12 +8,6 @@ import (
 
 func SetRouter() *gin.Engine {
 	r := gin.Default()
-
-	// 设置静态文件
-	r.Static("/picture", "./picture")
-
-	r.StaticFile("/favicon.ico", "./picture/favicon.ico")
-	r.GET("/", controllers.Home)
 	auth := r.Group("/api/auth")
 	{
 		auth.POST("/login", controllers.Login)

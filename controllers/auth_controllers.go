@@ -51,7 +51,7 @@ func Register(ctx *gin.Context) {
 func Login(ctx *gin.Context) {
 
 	var input struct {
-		Username string `json:"username"`
+		Email    string `json:"email"`
 		Password string `json:"password"`
 	}
 
@@ -62,7 +62,7 @@ func Login(ctx *gin.Context) {
 
 	var user models.User
 	// 从数据库中取出
-	if err := global.GlobalDB.Where("username = ?", input.Username).First(&user).Error; err != nil {
+	if err := global.GlobalDB.Where("email = ?", input.Email).First(&user).Error; err != nil {
 		ctx.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
 		return
 	}
@@ -72,7 +72,7 @@ func Login(ctx *gin.Context) {
 		ctx.JSON(http.StatusUnauthorized, gin.H{"error": "wrong password"})
 		return
 	}
-	token, err := utils.GenerateJWT(input.Username)
+	token, err := utils.GenerateJWT(input.Email)
 	if err != nil {
 		ctx.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
 		return
