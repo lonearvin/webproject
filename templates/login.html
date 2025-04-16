@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用户登录注册</title>
+    <style>
+ * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-image: url('https://picsum.photos/1920/1080');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 0;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            width: 420px;
+            max-width: 90%;
+            position: relative;
+            z-index: 1;
+            transition: transform 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+
+        .container:hover {
+            transform: translateY(-5px);
+        }
+
+        .form-container {
+            position: relative;
+        }
+
+        .form {
+            display: none;
+        }
+
+        .form.active {
+            display: block;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #2c3e50;
+            font-size: 2rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.8rem;
+            color: #4a5568;
+            font-weight: 500;
+        }
+
+        input {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 1rem;
+            background: rgba(255, 255, 255, 0.9);
+            transition: all 0.3s ease;
+        }
+
+        input:focus {
+            border-color: #4299e1;
+            box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.3);
+        }
+
+        button {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, #4299e1, #3182ce);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        button:hover {
+            background: linear-gradient(135deg, #3182ce, #4299e1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .toggle-form {
+            text-align: center;
+            margin-top: 1.5rem;
+            color: #718096;
+        }
+
+        .toggle-form a {
+            color: #4299e1;
+            text-decoration: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .toggle-form a:hover {
+            color: #3182ce;
+            text-decoration: underline;
+        }
+
+        .password-container {
+            position: relative;
+        }
+
+        .show-password {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            user-select: none;
+            color: #718096;
+            transition: color 0.3s ease;
+        }
+
+        .show-password:hover {
+            color: #4299e1;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 1.5rem;
+            }
+
+            h2 {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <!-- 登录表单 -->
+            <form id="loginForm" class="form active" action="/api/auth/login" method="post">
+                <h2>用户登录</h2>
+                <div class="form-group">
+                    <label for="loginEmail">邮箱</label>
+                    <input type="email" id="loginEmail" name="Username" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">密码</label>
+                    <div class="password-container">
+                        <input type="password" id="loginPassword" name="Password" required>
+                        <span class="show-password" onclick="togglePassword('loginPassword')">👁️</span>
+                    </div>
+                </div>
+                <button type="submit">登录</button>
+                <div class="toggle-form">
+                    还没有账号？<a onclick="showForm('registerForm')">立即注册</a>
+                </div>
+            </form>
+
+            <!-- 注册表单 -->
+            <form id="registerForm" class="form" action="api/auth/register" method="post">
+                <h2>用户注册</h2>
+                <div class="form-group">
+                    <label for="registerUsername">用户名</label>
+                    <input type="text" id="registerUsername" required name="Username">
+                </div>
+                <div class="form-group">
+                    <label for="registerEmail">邮箱</label>
+                    <input type="email" id="registerEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerPassword">输入用户密码</label>
+                    <div class="password-container">
+                        <input type="password" id="registerPassword" required name="Password">
+                        <span class="show-password" onclick="togglePassword('registerPassword')">👁️</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmPassword">重新输入密码</label>
+                    <div class="password-container">
+                        <input type="password" id="confirmPassword" required name="RePassword">
+                        <span class="show-password" onclick="togglePassword('confirmPassword')">👁️</span>
+                    </div>
+                </div>
+
+                <button type="submit">注册</button>
+                <div class="toggle-form">
+                    已有账号？<a onclick="showForm('loginForm')">立即登录</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+            // DOM加载完成后初始化
+    document.addEventListener('DOMContentLoaded', () => {
+      // 密码显示切换功能
+      window.togglePassword = function(fieldId) {
+        const passwordField = document.getElementById(fieldId);
+        passwordField.type = passwordField.type === 'password' ? 'text' : 'password';
+      }
+      // window.reTogglePassword = function(fieldId) {
+      //   const passwordField = document.getElementById(fieldId);
+      //   passwordField.type = passwordField.type === 'password' ? 'text' : 'password';
+      // }
+
+      // 表单切换功能
+      window.showForm = function(formId) {
+        document.querySelectorAll('.form').forEach(form => {
+          form.classList.remove('active');
+        });
+        document.getElementById(formId).classList.add('active');
+      }
+
+      // 登录表单处理
+      const loginForm = document.getElementById('loginForm');
+      if (loginForm) {
+        loginForm.addEventListener('submit', async function(e) {
+          e.preventDefault();
+          const form = e.target;
+          const submitBtn = form.querySelector('button[type="submit"]');
+          const errorContainer = document.createElement('div');
+          errorContainer.className = 'error-message';
+
+          // 清除旧错误
+          form.querySelectorAll('.error-message').forEach(el => el.remove());
+
+          try {
+            submitBtn.disabled = true;
+            submitBtn.textContent = '登录中...';
+
+            const email = form.loginEmail.value;
+            const password = form.loginPassword.value;
+
+            if (!/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/.test(email)) {
+              throw new Error('请输入有效的电子邮件地址');
+            }
+
+            if (password.length < 8) {
+              throw new Error('密码长度至少需要8个字符');
+            }
+
+            const response = await fetch('/api/auth/login', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                'X-CSRF-Token': document.querySelector('meta[name="csrf-token"]')?.content || ''
+              },
+              body: JSON.stringify({email, password })
+            });
+
+            const data = await response.json();
+
+            if (!response.ok) {
+              throw new Error(data.message || '登录失败，请检查您的凭证');
+            }
+
+            localStorage.setItem('authToken', data.token);
+            window.location.href = '/dashboard';
+
+          } catch (error) {
+            errorContainer.textContent = error.message;
+            form.insertBefore(errorContainer, submitBtn);
+            console.error('登录错误:', error);
+          } finally {
+            submitBtn.disabled = false;
+            submitBtn.textContent = '立即登录';
+          }
+        });
+      }
+
+      // 注册表单处理
+      const registerForm = document.getElementById('registerForm');
+      if (registerForm) {
+        registerForm.addEventListener('submit', async function(e) {
+          e.preventDefault();
+          const form = e.target;
+          const submitBtn = form.querySelector('button[type="submit"]');
+          const errorContainer = document.createElement('div');
+          errorContainer.className = 'error-message';
+
+          // 清除旧错误
+          form.querySelectorAll('.error-message').forEach(el => el.remove());
+
+          try {
+            submitBtn.disabled = true;
+            submitBtn.textContent = '注册中...';
+
+            const email = form.registerEmail.value;
+            const username = form.registerUsername.value
+            const password = form.registerPassword.value;
+            const confirmPassword = form.confirmPassword.value;
+
+            if (!/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/.test(email)) {
+              throw new Error('请输入有效的电子邮件地址');
+            }
+
+            if (password.length < 8) {
+              throw new Error('密码长度至少需要8个字符');
+            }
+
+            if (password !== confirmPassword) {
+              throw new Error('两次输入的密码不一致');
+            }
+
+            const response = await fetch('/api/auth/register', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                'X-CSRF-Token': document.querySelector('meta[name="csrf-token"]')?.content || ''
+              },
+              body: JSON.stringify({username, email, password })
+            });
+
+            const data = await response.json();
+
+            if (!response.ok) {
+              throw new Error(data.message || '注册失败，请重试');
+            }
+
+            alert('注册成功，请登录');
+            showForm('loginForm');
+
+          } catch (error) {
+            errorContainer.textContent = error.message;
+            form.insertBefore(errorContainer, submitBtn);
+            console.error('注册错误:', error);
+          } finally {
+            submitBtn.disabled = false;
+            submitBtn.textContent = '注册';
+          }
+        });
+      }
+    });
+    </script>
+</body>
+</html>
