@@ -1,6 +1,7 @@
 package main
 
 import (
+	"github.com/gin-gonic/gin"
 	"webproject/config"
 	"webproject/router"
 )
@@ -10,6 +11,10 @@ type Header struct {
 }
 
 func main() {
+
+	// 日志颜色化
+	gin.ForceConsoleColor()
+
 	config.InitConfig()
 	//fmt.Println(config.AppConfig.App.Port
 	if config.AppConfig.App.Port == "" {

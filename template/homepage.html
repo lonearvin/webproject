@@ -1,183 +1,282 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-    <!-- 设置 favicon 图标 -->
+    <title>凌图智控 - 智能工业解决方案提供商</title>
     <link rel="icon" href="/picture/favicon.ico" type="image/x-icon">
-<!--    <link rel="apple-touch-icon" href="/picture/apple-touch-icon.png">-->
-<!--    <link rel="icon" sizes="192x192" href="/picture/android-chrome-192x192.png">-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- 引入 Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <title>公司介绍</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
+    <!-- 基础页面CSS -->
+    <link type="text/css" rel="stylesheet" href="/template/homePage.css">
 
-        header {
-            background-color: #2C3E50;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
+    <link type="text/css" rel="stylesheet" href="/template/Carousel.css">
 
-        header h1 {
-            margin: 0;
-            font-size: 3rem;
-        }
-
-        section {
-            padding: 50px 20px;
-            text-align: center;
-        }
-
-        .section-title {
-            font-size: 2rem;
-            margin-bottom: 20px;
-        }
-
-        .section-description {
-            font-size: 1.2rem;
-            line-height: 1.6;
-            color: #555;
-        }
-
-        .team-container {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-            margin-top: 40px;
-        }
-
-        .team-member {
-            background-color: #fff;
-            padding: 20px;
-            width: 250px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-
-        .team-member img {
-            width: 100%;
-            border-radius: 10%;
-            height: 200px;
-            object-fit: cover;
-            margin-bottom: 20px;
-        }
-
-        .team-member h3 {
-            margin: 0;
-            font-size: 1.5rem;
-            color: #2C3E50;
-        }
-
-        .team-member p {
-            font-size: 1rem;
-            color: #777;
-        }
-
-        footer {
-            background-color: #2C3E50;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-        }
-
-        .service-container {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 50px;
-            flex-wrap: wrap;
-        }
-
-        .service-item {
-            background-color: #fff;
-            padding: 30px;
-            border-radius: 8px;
-            width: 300px;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .service-item h3 {
-            color: #2C3E50;
-            font-size: 1.5rem;
-        }
-
-        .service-item p {
-            color: #777;
-            font-size: 1rem;
-        }
-    </style>
 </head>
 <body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo-container">
+<!--                <a class="navbar-brand" href="/"> </a>-->
+                <a class="navbar-brand logo" href="#">
+                    <img src="../picture/favicon.ico" width="30" height="35" class="d-inline-block align-top" alt="">
+                    凌图智控
+                </a>
+            </div>
 
-<header>
-    <h1>凌图智控（上海）科技有限公司</h1>
-    <p>致力于为您提供最佳解决方案</p>
-</header>
+            <div class="introduce product">
+                <a href="">产品介绍</a>
+            </div>
+            <div class="Video Case">
+                <a href="">视频案例</a>
+            </div>
 
-<section>
-    <div class="section-title">关于我们</div>
-    <div class="section-description">
-        我们是一家领先的创新型公司，致力于为客户提供高效且创新的解决方案。通过我们的技术专长和卓越的团队，我们为各行各业的企业提供定制化服务。
+            <div class="nav-container">
+                <div class="nav-links">
+                    <a href="/">首页</a>
+                    <a href="#services">主营业务</a>
+                    <a href="#cooperate-section">合作客户</a>
+                    <a href="#patent">专利</a>
+                    <a href="#about">关于我们</a>
+                    <a href="#contact">联系我们</a>
+                    <a href="/api/login" id="loginBtn">登录</a>
+                    <a href="/api/register" id="registerBtn">注册</a>
+                </div>
+                <i class="fas fa-bars mobile-menu"></i>
+            </div>
+        </div>
+    </nav>
+    <!-- 轮播图容器 -->
+    <section id="carousel">
+            <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="../picture/2025-04-17+11_09_38.jpg" class="d-block w-100" alt="技术总监">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>第一张图片</h5>
+                    <p>这是第一张图片的描述内容。</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="../picture/2025-04-17+11_09_38.jpg" class="d-block w-100" alt="技术总监">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>第二张图片</h5>
+                    <p>这是第二张图片的描述内容。</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="../picture/2025-04-17+11_09_38.jpg" class="d-block w-100" alt="技术总监">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>第三张图片</h5>
+                    <p>这是第三张图片的描述内容。</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
     </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- 主营业务 -->
+    <section class="services" id="services">
+          <div class="section-title-wrapper">
+            <h2 class="section-title">主营业务</h2>
+          </div>
+        <div class="service-grid">
+            <a class="service-card" href="#">
+                <i class="fas fa-robot fa-3x"></i>
+                <h3>工业自动化</h3>
+                <p>提供从单机自动化到整厂集成的解决方案</p>
+                <ul class="service-features">
+                    <li>PLC控制系统</li>
+                    <li>机器人集成</li>
+                    <li>视觉检测系统</li>
+                </ul>
+            </a>
+            <a class="service-card"  href="#">
+                <i class="fas fa-industry fa-3x"></i>
+                <h3>智能工厂</h3>
+                <p>数字化工厂整体规划与实施</p>
+                <ul class="service-features">
+                    <li>MES系统实施</li>
+                    <li>设备物联网</li>
+                    <li>能源管理系统</li>
+                </ul>
+            </a>
+            <a class="service-card" href="#">
+                <i class="fas fa-chart-line fa-3x"></i>
+                <h3>数据分析</h3>
+                <p>工业大数据分析与应用</p>
+                <ul class="service-features">
+                    <li>生产过程优化</li>
+                    <li>预测性维护</li>
+                    <li>质量追溯系统</li>
+                </ul>
+            </a>
+        </div>
+    </section>
+    <hr class="section-divider">
+
+    <section class="cooperate-section" id="cooperate-section">
+        <div class="about-container">
+            <h2 id="section-title-cooperate-section">合作客户</h2>
+            <div class="cooperate-logos">
+                <!-- 添加合作客户的公司图标 -->
+                <a href="#" class="cooperate-logo"><img src="../picture/AIfactory.png" alt="公司1" /></a>
+                <a href="#" class="cooperate-logo"><img src="../picture/AIfactory.png" alt="公司2" /></a>
+                <a href="#" class="cooperate-logo"><img src="../picture/AIfactory.png" alt="公司3" /></a>
+                <a href="#" class="cooperate-logo"><img src="../picture/AIfactory.png" alt="公司4" /></a>
+            </div>
+        </div>
+    </section>
+    <hr class="section-divider">
+
+    <section class="patent" id="patent">
+        <div class="about-container">
+            <h2>专利</h2>
+            <div class="patent-images">
+                <!-- 添加专利的图片 -->
+                <a href="#" class="patent-image"><img src="../picture/AIfactory.png" alt="专利1" /></a>
+                <a href="#" class="patent-image"><img src="../picture/AIfactory.png" alt="专利2" /></a>
+                <a href="#" class="patent-image"><img src="../picture/AIfactory.png" alt="专利3" /></a>
+                <a href="#" class="patent-image"><img src="../picture/AIfactory.png" alt="专利4" /></a>
+            </div>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- 关于我们 -->
+<section class="about" id="about">
+  <div class="about-content">
+    <h2>关于凌图智控</h2>
+    <p>成立于2025年，国家级高新技术企业，专注为制造业提供智能化改造和数字化转型服务...</p>
+    <div class="achievements">
+      <div class="achievement-item">
+        <h4>500+</h4>
+        <p>服务客户</p>
+      </div>
+      <div class="achievement-item">
+        <h4>50+</h4>
+        <p>专利技术</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="about-image">
+    <video autoplay muted loop playsinline>
+      <source src="../video/268528_small.mp4" type="video/mp4">
+      您的浏览器不支持视频播放。
+    </video>
+  </div>
 </section>
 
-<section>
-    <div class="section-title">我们的团队</div>
-    <div class="team-container">
-        <div class="team-member">
-            <img src="https://via.placeholder.com/200" alt="团队成员1">
-            <h3>张三</h3>
-            <p>CEO</p>
+    <hr class="section-divider">
+
+    <section class="contact-card" id="contact">
+        <div class="card">
+        <h2>联系我们</h2>
+        <p>如有任何问题或合作意向，请随时与我们联系。</p>
+
+        <div class="contact-info">
+          <p><i class="fas fa-phone-alt"></i> 电话：123-456-7890</p>
+          <p><i class="fas fa-envelope"></i> 邮箱：contact@example.com</p>
+          <p><i class="fas fa-map-marker-alt"></i> 地址：北京市朝阳区某某路100号</p>
         </div>
-        <div class="team-member">
-            <img src="../picture/TechnicalDirector.jpg" alt="团队成员2">
-            <h3>张总</h3>
-            <p>技术总监</p>
+
+        <form class="contact-form">
+            <label>
+                <input type="text" placeholder="您的姓名" required>
+            </label>
+            <label>
+                <input type="email" placeholder="您的邮箱" required>
+            </label>
+            <label>
+                <textarea placeholder="留言内容" rows="4" required></textarea>
+            </label>
+            <button type="submit">发送消息</button>
+        </form>
+      </div>
+    </section>
+
+<!--    <hr class="section-divider">-->
+
+<footer class="footer">
+    <div class="footer-content">
+        <!-- 公司介绍部分 -->
+        <div class="footer-section company-info">
+            <h2>公司介绍</h2>
+            <p><strong>公司名称：</strong>凌图智控（上海）有限公司</p>
+            <p><strong>公司地址：</strong>上海市浦东新区</p>
+            <p><strong>电话：</strong>123 456 789 11</p>
+            <p><strong>邮箱：</strong><a href="mailto:[邮箱地址]">concat@mail.com</a></p>
         </div>
-        <div class="team-member">
-            <img src="https://via.placeholder.com/200" alt="团队成员3">
-            <h3>王五</h3>
-            <p>市场总监</p>
+
+        <!-- 快速链接部分 -->
+        <div class="footer-section quick-links">
+            <h2>快速链接</h2>
+            <ul>
+                <li><a href="#">首页</a></li>
+                <li><a href="#">产品</a></li>
+                <li><a href="#">关于我们</a></li>
+                <li><a href="#">联系我们</a></li>
+                <li><a href="#">隐私政策</a></li>
+            </ul>
+        </div>
+
+        <!-- 另一个快速链接部分 -->
+        <div class="footer-section quick-links">
+            <h2>快速链接</h2>
+            <ul>
+                <li><a href="#">首页</a></li>
+                <li><a href="#">产品</a></li>
+                <li><a href="#">关于我们</a></li>
+                <li><a href="#">联系我们</a></li>
+                <li><a href="#">隐私政策</a></li>
+            </ul>
+        </div>
+
+        <!-- 社交媒体部分 -->
+        <div class="footer-section social-media">
+            <h2>关注我们</h2>
+            <div class="social-icons">
+                <a href="#" class="social-icon"><img src="https://s1.aigei.com/src/img/png/91/91e73ffa16d34508b5933e068883ad47.png?imageMogr2/auto-orient/thumbnail/!132x132r/gravity/Center/crop/132x132/quality/85/%7CimageView2/2/w/132&e=2051020800&token=P7S2Xpzfz11vAkASLTkfHN7Fw-oOZBecqeJaxypL:FqDkJX-t7sk9ufQdgZ7yNSPWsVk=" alt="抖音" /></a>
+                <a href="#" class="social-icon"><img src="https://s1.aigei.com/src/img/png/ca/ca068f4865cb43158344b81d0ba21b8d.png?imageMogr2/auto-orient/thumbnail/!132x132r/gravity/Center/crop/132x132/quality/85/%7CimageView2/2/w/132&e=2051020800&token=P7S2Xpzfz11vAkASLTkfHN7Fw-oOZBecqeJaxypL:1wMN8oG2CzSE0TxAyrpVbi8cuvw=" alt="B站" /></a>
+                <a href="#" class="social-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" alt="YouTube" /></a>
+                <a href="#" class="social-icon"><img src="https://s1.aigei.com/src/img/png/95/95df24d64d9a4369b6d7fddad057288e.png?imageMogr2/auto-orient/thumbnail/!132x132r/gravity/Center/crop/132x132/quality/85/%7CimageView2/2/w/132&e=2051020800&token=P7S2Xpzfz11vAkASLTkfHN7Fw-oOZBecqeJaxypL:cc3zFD1gNQiUO8XFNSToENLCap8=" alt="微博" /></a>
+            </div>
         </div>
     </div>
-</section>
-
-<section>
-    <div class="section-title">我们的服务</div>
-    <div class="service-container">
-        <div class="service-item">
-            <h3>技术咨询</h3>
-            <p>我们为企业提供最新的技术咨询服务，帮助他们优化系统和流程。</p>
-        </div>
-        <div class="service-item">
-            <h3>定制开发</h3>
-            <p>根据客户需求，我们提供量身定制的解决方案，帮助企业提升效率。</p>
-        </div>
-        <div class="service-item">
-            <h3>企业培训</h3>
-            <p>我们提供专业的企业培训课程，帮助员工提升技能，适应快速发展的行业变化。</p>
-        </div>
+    <div class="footer-bottom">
+        <p>版权所有 &copy; 2025 [公司名]. 保留所有权利.</p>
     </div>
-</section>
-
-<footer>
-    <p>© 2025 公司名称 | 保留所有权利</p>
 </footer>
 
+
+    <!-- 引入 Bootstrap 5 的 JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // 在页面加载时初始化轮播图
+        var carousel = new bootstrap.Carousel(document.querySelector('#carouselExampleCaptions'), {
+            interval: 2000, // 设置每2秒自动切换
+            ride: 'carousel' // 激活轮播
+        });
+    </script>
 </body>
 </html>
