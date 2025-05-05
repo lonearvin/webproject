@@ -8,24 +8,37 @@ import (
 
 func SetRouter() *gin.Engine {
 	r := gin.Default()
-	// 增加静态文件
-	r.Static("./picture", "./picture/")
-	r.Static("/template", "./template")
-	r.Static("/video", "./video")
+
+	// 注册静态资源路径
+	staticPaths := map[string]string{
+		"/picture":  "./picture",
+		"/template": "./template",
+		"/video":    "./video",
+	}
+	for route, path := range staticPaths {
+		r.Static(route, path)
+	}
 	r.StaticFile("/favicon.ico", "./favicon.ico")
 
+	// 首页
 	r.GET("/", controllers.Home)
+
+	// 用户认证相关路由
 	auth := r.Group("/api/auth")
 	{
 		auth.POST("/login", controllers.Login)
 		auth.POST("/register", controllers.Register)
 	}
-	api := r.Group("/api/")
+
+	// API 路由（包含登录认证中间件）
+	api := r.Group("/api")
 	api.GET("/exchangeRate", controllers.GetExchangeRates)
-	// 需要登陆和注册才可以使用的功能
+
+	// 需要认证的路由
 	api.Use(middlewares.AuthMiddleWare())
 	{
 		api.POST("/exchangeRate", controllers.CreateExchangeRate)
 	}
+
 	return r
 }
