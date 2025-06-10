@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>页面未找到</title>
+    <link rel="icon" href="../static/picture/logo.png" type="image/x-icon">
+    <style>
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #e0f2f1 20%, #b2ebf2 80%); /* 薄荷绿渐变 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            font-family: 'Arial', sans-serif;
+            padding: 20px;
+        }
+
+        .error-container {
+            text-align: center;
+            background: white;
+            padding: 40px 60px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(178, 235, 242, 0.3);
+        }
+
+        .error-code {
+            font-size: 10rem;
+            color: #00bcd4; /* 青蓝色 */
+            font-weight: 900;
+            margin-bottom: 20px;
+            animation: bounce 1.5s infinite; /* 跳动动画 */
+        }
+
+        .error-message {
+            font-size: 2rem;
+            color: #444;
+            margin-bottom: 30px;
+        }
+
+        .back-btn {
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            background: #00bcd4;
+            color: white;
+            border: none;
+            border-radius: 28px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .back-btn:hover {
+            transform: scale(1.05);
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        /* 手机适配 */
+        @media (max-width: 768px) {
+            .error-code { font-size: 6rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <div class="error-code">404</div>
+        <p class="error-message">哎呀，你好像迷路了～</p>
+        <p class="error-message">我们找不到你要的页面 😅</p>
+        <button class="back-btn" onclick="window.location.href='/'">返回首页</button>
+    </div>
+</body>
+</html>

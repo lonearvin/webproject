@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>服务详情 - LINTRONIX</title>
+    <!-- 引入基础样式和脚本（与首页保持一致） -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="../../static/picture/logo.png" type="image/x-icon">
+    <style>
+        /* 继承首页的公用样式 */
+        .content-auto { content-visibility: auto; }
+        .text-gradient { background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+        /* 新增导航栏背景样式 */
+        .nav-bg {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        /* 新增导航栏居中样式 */
+        .nav-center {
+            justify-content: center; /* 导航内容居中 */
+        }
+
+        .nav-center .logo-container {
+            position: absolute; /* 固定Logo位置在左侧 */
+            left: 4rem; /* 根据需要调整距离 */
+        }
+    </style>
+</head>
+<body class="font-inter text-dark bg-light antialiased">
+    <!-- 固定导航栏（菜单项居中排列） -->
+    <header id="navbar" class="fixed w-full top-0 z-50 transition-all duration-300 nav-bg">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex nav-center"> <!-- 添加nav-center类 -->
+            <!-- 左侧Logo区域 -->
+            <div class="logo-container flex items-center">
+                <a href="#" class="flex items-center">
+                  <img src="../../static/picture/logo.png" alt="logo" class="h-8 w-8 rounded-full">
+                    <span class="ml-3 text-xl font-bold">LINTRONIX</span>
+                </a>
+            </div>
+
+            <!-- 居中导航菜单 -->
+            <div class="md:flex items-center space-x-8">
+                <a href="/" class="text-dark hover:text-primary transition-colors">首页</a>
+                <a href="#case-studies" class="text-dark hover:text-primary transition-colors">手机</a>
+                <a href="#case-studies" class="text-dark hover:text-primary transition-colors">电脑</a>
+            </div>
+
+            <!-- 右侧联系按钮（如需保留可取消注释） -->
+            <!-- <div class="hidden md:block">
+                <a href="/" class="bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded-lg transition-all transform hover:scale-105">
+                    联系我们
+                </a>
+            </div> -->
+        </nav>
+
+        <!-- 移动端菜单保持不变 -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg absolute w-full">
+            <div class="container mx-auto px-4 py-4 flex flex-col space-y-4">
+                <a href="#about" class="text-dark hover:text-primary transition-colors py-2">关于我们</a>
+                <a href="#services" class="text-dark hover:text-primary transition-colors py-2">服务</a>
+                <a href="#team" class="text-dark hover:text-primary transition-colors py-2">团队</a>
+                <a href="#case-studies" class="text-dark hover:text-primary transition-colors py-2">案例</a>
+                <a href="#testimonials" class="text-dark hover:text-primary transition-colors py-2">客户评价</a>
+                <a href="#contact" class="text-dark hover:text-primary transition-colors py-2">联系我们</a>
+                <a href="#contact" class="bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-lg transition-all text-center">
+                    联系我们
+                </a>
+            </div>
+        </div>
+    </header>
+    <main class="pt-24 pb-16">
+        <!-- 案例内容保持不变 -->
+        <!-- 案例详情标题区 -->
+        <section class="container mx-auto px-4 sm:px-6 lg:px-8 mb-16">
+            <div class="flex flex-col items-center text-center">
+                <h1 class="text-3xl font-bold mb-4" data-lang="case-detail-title">新型癌症免疫治疗案例</h1>
+                <p class="text-muted max-w-2xl mb-8" data-lang="case-detail-subtitle">
+                    利用CRISPR技术开发个性化肿瘤疫苗的突破性实践
+                </p>
+                <div class="w-full md:w-1/2">
+                    <img src="https://picsum.photos/id/239/1200/600" alt="案例主图" class="rounded-lg shadow-lg mb-6">
+                </div>
+            </div>
+        </section>
+
+        <!-- 案例详情内容区 -->
+        <section class="container mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-12 mb-20">
+            <div>
+                <h2 class="text-2xl font-bold mb-6" data-lang="case-detail-problem">项目挑战</h2>
+                <p class="text-muted mb-4" data-lang="case-detail-problem-desc">
+                    传统癌症治疗对晚期黑色素瘤患者效果有限，需开发针对个体肿瘤突变的新型免疫疗法
+                </p>
+                <ul class="list-disc pl-6 text-muted" data-lang="case-detail-challenges">
+                    <li>肿瘤抗原异质性导致疫苗设计困难</li>
+                    <li>免疫细胞激活效率不足</li>
+                    <li>临床转化周期长</li>
+                </ul>
+            </div>
+
+            <div>
+                <h2 class="text-2xl font-bold mb-6" data-lang="case-detail-solution">解决方案</h2>
+                <p class="text-muted mb-4" data-lang="case-detail-solution-desc">
+                    结合基因编辑与肿瘤疫苗技术，开发个性化治疗方案
+                </p>
+                <div class="space-y-4">
+                    <div class="flex items-start">
+                        <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mr-4">
+                            <i class="fa fa-flask text-xl text-primary"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold" data-lang="case-detail-step-1">全基因组测序分析</h3>
+                            <p class="text-muted" data-lang="case-detail-step-1-desc">
+                                识别患者肿瘤特异性突变抗原
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start">
+                        <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mr-4">
+                            <i class="fa fa-code text-xl text-primary"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold" data-lang="case-detail-step-2">CRISPR-Cas9基因编辑</h3>
+                            <p class="text-muted" data-lang="case-detail-step-2-desc">
+                                修饰树突状细胞增强抗原呈递能力
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start">
+                        <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mr-4">
+                            <i class="fa fa-medkit text-xl text-primary"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold" data-lang="case-detail-step-3">个性化疫苗制备</h3>
+                            <p class="text-muted" data-lang="case-detail-step-3-desc">
+                                基于突变抗原合成个性化RNA疫苗
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 案例成果展示 -->
+        <section class="container mx-auto px-4 sm:px-6 lg:px-8 bg-light rounded-lg p-12 mb-20">
+            <h2 class="text-2xl font-bold mb-8 text-center" data-lang="case-detail-result">项目成果</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <p class="text-4xl font-bold text-primary">40%</p>
+                    <p class="text-muted" data-lang="case-detail-result-1">晚期患者1年生存率提升</p>
+                </div>
+                <div class="text-center">
+                    <p class="text-4xl font-bold text-primary">92%</p>
+                    <p class="text-muted" data-lang="case-detail-result-2">肿瘤特异性T细胞激活率</p>
+                </div>
+                <div class="text-center">
+                    <p class="text-4xl font-bold text-primary">12+</p>
+                    <p class="text-muted" data-lang="case-detail-result-3">国际专利申请</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 相关案例推荐 -->
+        <section class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl font-bold mb-12 text-center" data-lang="case-related-title">相关案例推荐</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- 案例卡片1 -->
+                <div class="bg-white rounded-lg shadow-card hover:shadow-card-hover transition-all transform hover:-translate-y-2">
+                    <a href="/case-drought" class="block">
+                        <img src="https://picsum.photos/id/225/400/300" alt="抗旱作物" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold" data-lang="case-related-1-title">抗旱作物基因改良</h3>
+                            <p class="text-muted" data-lang="case-related-1-desc">
+                                利用CRISPR技术开发抗旱水稻品种
+                            </p>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- 案例卡片2 -->
+                <div class="bg-white rounded-lg shadow-card hover:shadow-card-hover transition-all transform hover:-translate-y-2">
+                    <a href="/case-plastic" class="block">
+                        <img src="https://picsum.photos/id/191/400/300" alt="生物降解塑料" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold" data-lang="case-related-2-title">生物降解塑料技术</h3>
+                            <p class="text-muted" data-lang="case-related-2-desc">
+                                新型生物基材料研发与应用
+                            </p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 固定 footer（与首页完全一致） -->
+    <footer class="bg-dark text-white pt-16 pb-8" style="background-color: #1c2939">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <div class="flex items-center mb-6">
+                        <div class="w-10 h-10 rounded-lg bg-white flex items-center justify-center text-primary">
+<!--                            <i class="fa fa-flask text-xl"></i>-->
+                            <img src="../static/picture/logo.png" alt="logo" class="h-8 w-8 rounded-full">
+                        </div>
+                        <span class="ml-3 text-xl font-bold">LINTRONIX</span>
+                    </div>
+                    <p class="text-gray-400 mb-6">
+                        我们致力于开发前沿生物技术解决方案，推动医疗健康、农业和环境科学领域的创新发展。
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fa fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fa fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold mb-6">快速链接</h4>
+                    <ul class="space-y-4">
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition-colors">关于我们</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition-colors">服务</a></li>
+                        <li><a href="#team" class="text-gray-400 hover:text-white transition-colors">团队</a></li>
+                        <li><a href="#case-studies" class="text-gray-400 hover:text-white transition-colors">案例研究</a></li>
+                        <li><a href="#testimonials" class="text-gray-400 hover:text-white transition-colors">客户评价</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors">联系我们</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold mb-6">服务</h4>
+                    <ul class="space-y-4">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">药物研发</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">基因测序</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">生物信息学分析</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">细胞治疗开发</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">农业生物技术</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">咨询与培训</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold mb-6">订阅我们</h4>
+                    <p class="text-gray-400 mb-6">
+                        订阅我们的通讯，了解最新的生物技术发展和公司动态。
+                    </p>
+                    <form>
+                        <div class="flex">
+                            <input type="email" placeholder="您的邮箱地址" class="px-4 py-3 rounded-l-lg w-full focus:outline-none bg-gray-800 text-white border border-gray-700">
+                            <button type="submit" class="bg-primary hover:bg-primary/90 text-white px-4 py-3 rounded-r-lg transition-colors">
+                                <i class="fa fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 mb-4 md:mb-0">
+                        &copy; 2025 Bioyond. 保留所有权利。
+                    </p>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">隐私政策</a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">服务条款</a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">Cookie政策</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
