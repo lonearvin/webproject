@@ -1,7 +1,7 @@
 app:
   name: CurrencyExchangeApp
   port: :8080
-  TemplatePath: template/homepage.html
+  TemplatePath: templates
 
 database:
   host: 127.0.0.1
@@ -13,3 +13,11 @@ database:
   MaxIdleConns: 10
   MaxOpenConns: 100
   ConnMaxLifetime: 1 # 这里是小时为单位
+
+GIN_MODE:
+  model: debug
+Redis:
+  Host: 127.0.0.1
+  Port: 6379
+  Username:
+  Password:

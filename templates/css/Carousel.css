@@ -1,0 +1,9 @@
+#carousel {
+    padding-top: 10px; /* 让图片不被 navbar 遮挡 */
+}
+
+#carousel .carousel-item img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}

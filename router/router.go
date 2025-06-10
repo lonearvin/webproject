@@ -2,43 +2,62 @@ package router
 
 import (
 	"github.com/gin-gonic/gin"
+	"log"
+	"net/http"
+	"os"
+	"webproject/config"
 	"webproject/controllers"
-	"webproject/middlewares"
 )
 
 func SetRouter() *gin.Engine {
+	// 初始化 gin 引擎
 	r := gin.Default()
-
+	if gin.Mode() == gin.DebugMode {
+		r.Use(func(c *gin.Context) {
+			c.Writer.Header().Set("Cache-Control", "no-cache, no-store, must-revalidate")
+			c.Writer.Header().Set("Pragma", "no-cache")
+			c.Writer.Header().Set("Expires", "0")
+			c.Next()
+		})
+	}
 	// 注册静态资源路径
 	staticPaths := map[string]string{
-		"/picture":  "./picture",
-		"/template": "./template",
-		"/video":    "./video",
+		"/static":  "./static",
+		"/picture": "./picture",
+		"/video":   "./video",
 	}
 	for route, path := range staticPaths {
 		r.Static(route, path)
 	}
-	r.StaticFile("/favicon.ico", "./favicon.ico")
+	r.StaticFile("/favicon.ico", "./picture/favicon.ico")
 
 	// 首页
 	r.GET("/", controllers.Home)
 
-	// 用户认证相关路由
-	auth := r.Group("/api/auth")
-	{
-		auth.POST("/login", controllers.Login)
-		auth.POST("/register", controllers.Register)
-	}
+	// 视频页
+	r.GET("/api/video", controllers.GetProductVideo)
 
-	// API 路由（包含登录认证中间件）
-	api := r.Group("/api")
-	api.GET("/exchangeRate", controllers.GetExchangeRates)
+	// 服务页面（根据 id 显示对应 HTML）
+	r.GET("/service", controllers.GetService)
 
-	// 需要认证的路由
-	api.Use(middlewares.AuthMiddleWare())
-	{
-		api.POST("/exchangeRate", controllers.CreateExchangeRate)
-	}
+	// 可选支持 REST 风格 URL: /service/3C
+	r.GET("/service/:id", func(ctx *gin.Context) {
+		ctx.Request.URL.RawQuery = "id=" + ctx.Param("id")
+		controllers.GetService(ctx)
+	})
+	r.POST("/contact", controllers.ContactPost)
+	r.POST("/subscribe", controllers.Subscribe)
+
+	// 默认 404 页面处理
+	r.NoRoute(func(ctx *gin.Context) {
+		htmlFilePath := config.AppConfig.App.TemplatePath + "/404.html"
+		if _, err := os.Stat(htmlFilePath); err == nil {
+			ctx.File(htmlFilePath)
+		} else {
+			log.Printf("找不到404页面文件: %v", err)
+			ctx.String(http.StatusNotFound, "404 Not Found")
+		}
+	})
 
 	return r
 }

@@ -1,0 +1,39 @@
+/* === 变量 === */
+:root{
+  --nav-height: 80px;
+  --primary: #2A5EE6;
+}
+
+/* 全局 reset */
+*{box-sizing:border-box;margin:0;padding:0}
+
+/* 导航栏 */
+.navbar{
+  height: var(--nav-height);
+  background: transparent;
+  transition: background .3s ease, box-shadow .3s ease;
+}
+.navbar.scrolled{
+  background: rgba(0,0,0,.8);
+  box-shadow: 0 2px 8px rgba(0,0,0,.3);
+}
+
+/* Hero */
+#hero{min-height:100vh}
+.hero-mask{background:rgba(0,0,0,.25)}
+.scroll-down{
+  bottom: 40px;
+  font-size: 2rem;
+  color:#fff;
+  animation:bounce 2s infinite;
+}
+
+/* 锚点滚动修正 */
+[id]{scroll-margin-top: calc(var(--nav-height) + 300px);}
+
+/* 小动画 */
+@keyframes bounce{
+  0%,20%,50%,80%,100%{transform:translate(-50%,0)}
+  40%{transform:translate(-50%, -8px)}
+  60%{transform:translate(-50%, -4px)}
+}

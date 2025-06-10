@@ -10,7 +10,7 @@ import (
 
 // Home 该函数将主页面返回给请求
 func Home(ctx *gin.Context) {
-	htmlFilePath := config.AppConfig.App.TemplatePath
+	htmlFilePath := config.AppConfig.App.TemplatePath + "/homepage.html"
 	// 检查是否存在这个地址
 	_, err := os.Open(htmlFilePath)
 	if err != nil {
