@@ -8,5 +8,6 @@ type ContactPostData struct {
 }
 
 type SubscribeData struct {
-	Email string `form:"Email"`
+	ID    uint   `gorm:"primaryKey"`
+	Email string `gorm:"uniqueIndex;not null" form:"Email"`
 }

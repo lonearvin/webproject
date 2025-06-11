@@ -13,11 +13,6 @@ func ContactPost(context *gin.Context) {
 		context.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
-
-	err = utils.HandleContactPost(data)
-	if err != nil {
-		context.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
-		return
-	}
-	context.JSON(http.StatusOK, gin.H{"status": "received", "data": data})
+	// 处理数据
+	utils.HandleContactPost(context)
 }
