@@ -2,17 +2,30 @@ package controllers
 
 import (
 	"github.com/gin-gonic/gin"
-	"net/http"
+	"webproject/global"
 	"webproject/utils"
 )
 
-func ContactPost(context *gin.Context) {
+func ContactPost(c *gin.Context) {
 	var data utils.ContactPostData
-	err := context.ShouldBind(&data)
-	if err != nil {
-		context.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+	if err := c.ShouldBind(&data); err != nil {
+		c.JSON(400, gin.H{"error": "Invalid input"})
 		return
 	}
-	// 处理数据
-	utils.HandleContactPost(context)
+
+	var existing utils.ContactPostData
+	err := global.GlobalDB.Where("name = ? AND email = ? AND subject = ? AND message = ?",
+		data.Name, data.Email, data.Subject, data.Message).First(&existing).Error
+
+	if err == nil {
+		c.JSON(409, gin.H{"error": "信息重复提交"})
+		return
+	}
+
+	if err := global.GlobalDB.Create(&data).Error; err != nil {
+		c.JSON(500, gin.H{"error": "保存失败"})
+		return
+	}
+
+	c.JSON(200, gin.H{"message": "提交成功"})
 }

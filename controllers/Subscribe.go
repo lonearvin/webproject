@@ -18,15 +18,18 @@ func Subscribe(ctx *gin.Context) {
 			"message": err.Error(),
 		})
 		log.Errorf(ctx, "subscribe faild: %v", err.Error())
-		return
-	}
-
-	if err := global.GlobalDB.AutoMigrate(&data); err != nil {
-		ctx.JSON(http.StatusBadRequest, gin.H{
-			"code":    http.StatusBadRequest,
+		ctx.JSON(http.StatusInternalServerError, gin.H{
+			"code":    http.StatusInternalServerError,
 			"message": err.Error(),
 		})
-		log.Errorf(ctx, "subscribe faild: %v", err.Error())
+		return
+	}
+	var existing utils.SubscribeData
+	if err := global.GlobalDB.Where("email=?", data.Email).First(&existing).Error; err == nil {
+		ctx.JSON(409, gin.H{
+			"code":    409,
+			"message": "信息重复提交",
+		})
 		return
 	}
 

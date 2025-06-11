@@ -9,5 +9,5 @@ type ContactPostData struct {
 
 type SubscribeData struct {
 	ID    uint   `gorm:"primaryKey"`
-	Email string `gorm:"uniqueIndex;not null" form:"Email"`
+	Email string `gorm:"type:varchar(191);uniqueIndex;not null" form:"Email"`
 }

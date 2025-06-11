@@ -5,6 +5,7 @@ import (
 	"gorm.io/gorm"
 	"time"
 	"webproject/global"
+	"webproject/utils"
 )
 import "gorm.io/driver/mysql"
 
@@ -39,4 +40,15 @@ func InitDB() {
 	// 最大链接时间
 	sqlDB.SetConnMaxLifetime(time.Duration(AppConfig.Database.ConnMaxLifetime) * time.Hour)
 	global.GlobalDB = db
+
+	//初始化表
+	err = global.GlobalDB.AutoMigrate(&utils.ContactPostData{})
+	if err != nil {
+		return
+	}
+	err = global.GlobalDB.AutoMigrate(&utils.SubscribeData{})
+	if err != nil {
+		return
+	}
+
 }

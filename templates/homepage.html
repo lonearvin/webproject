@@ -967,6 +967,11 @@
     </div>
 </footer>
 <script>
+
+    // 增加全局时间，防止同一ip频繁提交
+    // TODO
+
+
     // 导航栏滚动效果
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
@@ -1023,12 +1028,15 @@
             // 展示不同的错误内容
             if (response.ok) {
                 showModal('提交成功', '消息已成功发送，我们会尽快回复！', 'success', resetForm);
+            } else if (response.status === 409) {
+                const data = await response.json();
+                showModal("提交失败", "消息已经提交过了！", 'success', resetForm)
             } else {
                 const data = await response.json();
-                showModal('提交失败', data.message || '请检查输入内容', 'error', resetForm);
+                showModal('提交失败', data.message || '请检查输入内容!', 'error', resetForm);
             }
         } catch (error) {
-            showModal('网络错误', '请检查网络连接后重试', 'error', resetForm);
+            showModal('网络错误', '请检查网络连接后重试!', 'error', resetForm);
         }
     });
 
@@ -1055,7 +1063,10 @@
             });
             if (response.ok) {
                 showModal("订阅成功", "恭喜老板订阅成功!", "success", resetSubscribeForm);
-            } else {
+            } else if (response.status === 409) {
+                const data = await response.json();
+                showModal("订阅失败","老板已经订阅过了。", "success", resetSubscribeForm);
+            }else{
                 const data = await response.json();
                 showModal("订阅失败", "是我们照顾不周了!", "error", resetSubscribeForm);
             }
