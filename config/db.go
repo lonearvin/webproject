@@ -39,14 +39,14 @@ func InitDB() {
 	sqlDB.SetMaxOpenConns(AppConfig.Database.MaxOpenConns)
 	// 最大链接时间
 	sqlDB.SetConnMaxLifetime(time.Duration(AppConfig.Database.ConnMaxLifetime) * time.Hour)
-	global.GlobalDB = db
+	global.Db = db
 
 	//初始化表
-	err = global.GlobalDB.AutoMigrate(&utils.ContactPostData{})
+	err = global.Db.AutoMigrate(&utils.ContactPostData{})
 	if err != nil {
 		return
 	}
-	err = global.GlobalDB.AutoMigrate(&utils.SubscribeData{})
+	err = global.Db.AutoMigrate(&utils.SubscribeData{})
 	if err != nil {
 		return
 	}

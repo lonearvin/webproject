@@ -1,16 +1,15 @@
 package controllers
 
 import (
-	"github.com/gin-gonic/gin"
 	"log"
 	"net/http"
 	"os"
+
+	"github.com/gin-gonic/gin"
 )
 
 func GetProductVideo(ctx *gin.Context) {
-	// htmlFilePath := config.AppConfig.App.TemplatePath
 	Path := "templates/producter.html"
-	// 检查是否存在这个地址
 	_, err := os.Open(Path)
 	if err != nil {
 		log.Printf("Failed to find Html file: %v", err)
