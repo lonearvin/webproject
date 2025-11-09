@@ -1,12 +1,13 @@
 package controllers
 
 import (
-	"github.com/gin-gonic/gin"
-	"google.golang.org/appengine/log"
 	"net/http"
 	"webproject/global"
+	"webproject/utils"
+
+	"github.com/gin-gonic/gin"
+	"google.golang.org/appengine/log"
 )
-import "webproject/utils"
 
 func Subscribe(ctx *gin.Context) {
 	var data utils.SubscribeData
@@ -25,7 +26,7 @@ func Subscribe(ctx *gin.Context) {
 		return
 	}
 	var existing utils.SubscribeData
-	if err := global.GlobalDB.Where("email=?", data.Email).First(&existing).Error; err == nil {
+	if err := global.Db.Where("email=?", data.Email).First(&existing).Error; err == nil {
 		ctx.JSON(409, gin.H{
 			"code":    409,
 			"message": "信息重复提交",
@@ -34,7 +35,7 @@ func Subscribe(ctx *gin.Context) {
 	}
 
 	// 进行数据库保存
-	if err := global.GlobalDB.Create(&data).Error; err != nil {
+	if err := global.Db.Create(&data).Error; err != nil {
 		log.Errorf(ctx, "subscribe faild: %v", err.Error())
 		ctx.JSON(http.StatusInternalServerError, gin.H{
 			"code":    http.StatusInternalServerError,

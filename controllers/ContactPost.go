@@ -14,7 +14,7 @@ func ContactPost(c *gin.Context) {
 	}
 
 	var existing utils.ContactPostData
-	err := global.GlobalDB.Where("name = ? AND email = ? AND subject = ? AND message = ?",
+	err := global.Db.Where("name = ? AND email = ? AND subject = ? AND message = ?",
 		data.Name, data.Email, data.Subject, data.Message).First(&existing).Error
 
 	if err == nil {
@@ -22,7 +22,7 @@ func ContactPost(c *gin.Context) {
 		return
 	}
 
-	if err := global.GlobalDB.Create(&data).Error; err != nil {
+	if err := global.Db.Create(&data).Error; err != nil {
 		c.JSON(500, gin.H{"error": "保存失败"})
 		return
 	}

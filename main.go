@@ -1,18 +1,15 @@
 package main
 
 import (
-	"github.com/gin-gonic/gin"
 	"webproject/config"
 	"webproject/router"
+
+	"github.com/gin-gonic/gin"
 )
 
 func main() {
-
-	// 日志颜色化
 	gin.ForceConsoleColor()
-
 	config.InitConfig()
-	//fmt.Println(config.AppConfig.App.Port)
 	model := config.AppConfig.GinMode.Model
 	if model == "debug" {
 		gin.SetMode(gin.DebugMode)
@@ -29,5 +26,5 @@ func main() {
 	err := r.Run(config.AppConfig.App.Port)
 	if err != nil {
 		return
-	} // listen and serve on 0.0.0.0:8080
+	}
 }

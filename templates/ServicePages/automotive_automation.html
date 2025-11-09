@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3C行业自动化技术服务 - LINTRONIX</title>
-    <!-- 引入基础样式和脚本（与首页保持一致） -->
+    <title>汽车行业自动化技术服务 - LINTRONIX</title>
+    <!-- 引入基础样式和脚本 -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="icon" href="../../static/picture/logo.png" type="image/x-icon">
     <style>
-        /* 继承首页的公用样式 */
+        /* 公用样式 */
         .content-auto {
             content-visibility: auto;
         }
@@ -21,21 +21,20 @@
             -webkit-text-fill-color: transparent;
         }
 
-        /* 新增导航栏背景样式 */
+        /* 导航栏样式 */
         .nav-bg {
             background-color: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(8px);
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
         }
 
-        /* 新增导航栏居中样式 */
         .nav-center {
-            justify-content: center; /* 导航内容居中 */
+            justify-content: center;
         }
 
         .nav-center .logo-container {
-            position: absolute; /* 固定Logo位置在左侧 */
-            left: 4rem; /* 根据需要调整距离 */
+            position: absolute;
+            left: 4rem;
         }
 
         .bg-dark {
@@ -44,9 +43,9 @@
     </style>
 </head>
 <body class="font-inter text-dark bg-light antialiased">
-<!-- 固定导航栏（菜单项项居中排列） -->
+<!-- 固定导航栏 -->
 <header id="navbar" class="fixed w-full top-0 z-50 transition-all duration-300 nav-bg">
-    <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex nav-center"> <!-- 添加nav-center类 -->
+    <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex nav-center">
         <!-- 左侧Logo区域 -->
         <div class="logo-container flex items-center">
             <a href="#" class="flex items-center">
@@ -58,102 +57,110 @@
         <!-- 居中导航菜单 -->
         <div class="md:flex items-center space-x-8">
             <a href="/" class="text-dark hover:text-primary transition-colors">首页</a>
-            <!-- <a href="#case-studies" class="text-dark hover:text-primary transition-colors">手机</a>
-            <a href="#case-studies" class="text-dark hover:text-primary transition-colors">电脑</a> -->
+            <!-- <a href="#powertrain" class="text-dark hover:text-primary transition-colors">动力总成</a>
+            <a href="#body-in-white" class="text-dark hover:text-primary transition-colors">白车身</a> -->
         </div>
 
-        <!-- 右侧联系按钮（如需保留可取消注释） -->
+        <!-- 右侧联系按钮 -->
         <!-- <div class="hidden md:block">
-            <a href="/" class="bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded-lg transition-all transform hover:scale-105">
+            <a href="/contact" class="bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded-lg transition-all transform hover:scale-105">
                 联系我们
             </a>
         </div> -->
     </nav>
 
-    <!-- 移动端菜单保持不变 -->
+    <!-- 移动端菜单 -->
     <!-- <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg absolute w-full">
         <div class="container mx-auto px-4 py-4 flex flex-col space-y-4">
             <a href="#about" class="text-dark hover:text-primary transition-colors py-2">关于我们</a>
             <a href="#services" class="text-dark hover:text-primary transition-colors py-2">服务</a>
-            <a href="#team" class="text-dark hover:text-primary transition-colors py-2">团队</a>
-            <a href="#case-studies" class="text-dark hover:text-primary transition-colors py-2">案例</a>
-            <a href="#testimonials" class="text-dark hover:text-primary transition-colors py-2">客户评价</a>
-            <a href="#contact" class="text-dark hover:text-primary transition-colors py-2">联系我们</a>
-            <a href="#contact"
-               class="bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-lg transition-all text-center">
+            <a href="#cases" class="text-dark hover:text-primary transition-colors py-2">案例</a>
+            <a href="#contact" class="bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-lg transition-all text-center">
                 联系我们
             </a>
         </div>
     </div> -->
 </header>
 <main class="pt-24 pb-16">
-    <!-- 案例内容保持不变 -->
-    <!-- 案例详情标题区 -->
+    <!-- 汽车行业服务标题区 -->
     <section class="container mx-auto px-4 sm:px-6 lg:px-8 mb-16">
         <div class="flex flex-col items-center text-center">
-            <h1 class="text-3xl font-bold mb-4" data-lang="case-detail-title">3C行业自动化技术服务</h1>
-            <p class="text-muted max-w-2xl mb-8" data-lang="case-detail-subtitle">
-                为消费电子、计算机和通信设备制造提供全方位智能自动化解决方案
+            <h1 class="text-3xl font-bold mb-4" data-lang="automotive-title">汽车行业智能自动化解决方案</h1>
+            <p class="text-muted max-w-2xl mb-8" data-lang="automotive-subtitle">
+                覆盖动力总成、白车身、零部件及汽车电子的全产业链智能制造技术服务
             </p>
             <div class="w-full md:w-1/2">
-                <img src="https://picsum.photos/id/180/1200/600" alt="3C行业自动化生产线" class="rounded-lg shadow-lg mb-6">
+                <img src="https://picsum.photos/id/1071/1200/600" alt="汽车智能制造生产线" class="rounded-lg shadow-lg mb-6">
             </div>
         </div>
     </section>
 
-    <!-- 案例详情内容区 -->
+    <!-- 汽车行业服务详情内容区 -->
     <section class="container mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-12 mb-20">
         <div>
-            <h2 class="text-2xl font-bold mb-6" data-lang="case-detail-problem">行业挑战</h2>
-            <p class="text-muted mb-4" data-lang="case-detail-problem-desc">
-                3C产品更新迭代快、精度要求高、人工成本上升，传统生产模式面临效率与质量双重压力
+            <h2 class="text-2xl font-bold mb-6" data-lang="automotive-challenges">行业挑战</h2>
+            <p class="text-muted mb-4" data-lang="automotive-challenges-desc">
+                汽车制造业面临产能提升、质量控制、柔性生产与快速换型的多重挑战
             </p>
-            <ul class="list-disc pl-6 text-muted" data-lang="case-detail-challenges">
-                <li>产品生命周期短，生产线调整频繁</li>
-                <li>精密组件装配精度要求达微米级</li>
-                <li>多品种小批量生产模式效率低下</li>
-                <li>人工检测一致性差，质量控制困难</li>
+            <ul class="list-disc pl-6 text-muted" data-lang="automotive-challenge-list">
+                <li>多车型混线生产的柔性化需求日益增加</li>
+                <li>关键工序的精密装配与质量检测要求严苛</li>
+                <li>生产节拍提升与制造成本控制的平衡</li>
+                <li>新能源汽车与传统燃油车生产线的兼容问题</li>
+                <li>汽车电子部件的高精度组装与测试需求</li>
             </ul>
         </div>
 
         <div>
-            <h2 class="text-2xl font-bold mb-6" data-lang="case-detail-solution">解决方案</h2>
-            <p class="text-muted mb-4" data-lang="case-detail-solution-desc">
-                融合机器人技术、机器视觉与智能控制系统，打造柔性自动化生产体系
+            <h2 class="text-2xl font-bold mb-6" data-lang="automotive-solutions">核心解决方案</h2>
+            <p class="text-muted mb-4" data-lang="automotive-solutions-desc">
+                提供覆盖汽车全产业链的智能化、自动化与数字化整体解决方案
             </p>
             <div class="space-y-4">
                 <div class="flex items-start">
                     <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mr-4">
-                        <i class="fa fa-robot text-xl text-primary"></i>
+                        <i class="fa fa-cog text-xl text-primary"></i>
                     </div>
                     <div>
-                        <h3 class="text-lg font-semibold" data-lang="case-detail-step-1">柔性自动化生产线</h3>
-                        <p class="text-muted" data-lang="case-detail-step-1-desc">
-                            采用模块化设计，快速适应多品种产品切换，换产时间缩短80%
+                        <h3 class="text-lg font-semibold" data-lang="automotive-solution-1">动力总成自动化系统</h3>
+                        <p class="text-muted" data-lang="automotive-solution-1-desc">
+                            发动机与变速箱的高精度装配、检测与测试一体化生产线
                         </p>
                     </div>
                 </div>
 
                 <div class="flex items-start">
                     <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mr-4">
-                        <i class="fa fa-eye text-xl text-primary"></i>
+                        <i class="fa fa-car text-xl text-primary"></i>
                     </div>
                     <div>
-                        <h3 class="text-lg font-semibold" data-lang="case-detail-step-2">AI视觉检测系统</h3>
-                        <p class="text-muted" data-lang="case-detail-step-2-desc">
-                            0.01mm精度缺陷检测，识别率达99.98%，远超人工检测水平
+                        <h3 class="text-lg font-semibold" data-lang="automotive-solution-2">白车身焊接自动化</h3>
+                        <p class="text-muted" data-lang="automotive-solution-2-desc">
+                            机器人柔性焊接生产线，实现多车型快速切换与高精度焊接
                         </p>
                     </div>
                 </div>
 
                 <div class="flex items-start">
                     <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mr-4">
-                        <i class="fa fa-cogs text-xl text-primary"></i>
+                        <i class="fa fa-cubes text-xl text-primary"></i>
                     </div>
                     <div>
-                        <h3 class="text-lg font-semibold" data-lang="case-detail-step-3">智能控制系统</h3>
-                        <p class="text-muted" data-lang="case-detail-step-3-desc">
-                            实时采集分析生产数据，实现预测性维护，设备OEE提升至92%
+                        <h3 class="text-lg font-semibold" data-lang="automotive-solution-3">零部件智能装配</h3>
+                        <p class="text-muted" data-lang="automotive-solution-3-desc">
+                            底盘、内饰等关键零部件的自动化装配与在线检测系统
+                        </p>
+                    </div>
+                </div>
+
+                <div class="flex items-start">
+                    <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mr-4">
+                        <i class="fa fa-microchip text-xl text-primary"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold" data-lang="automotive-solution-4">汽车电子制造方案</h3>
+                        <p class="text-muted" data-lang="automotive-solution-4-desc">
+                            车载电子、ADAS系统的精密组装与功能测试整体解决方案
                         </p>
                     </div>
                 </div>
@@ -161,47 +168,84 @@
         </div>
     </section>
 
-    <!-- 相关案例推荐 -->
-    <section class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-2xl font-bold mb-12 text-center" data-lang="case-related-title">相关技术方案</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <!-- 案例卡片1 -->
+    <!-- 汽车行业服务成果展示
+    <section class="container mx-auto px-4 sm:px-6 lg:px-8 bg-light rounded-lg p-12 mb-20">
+        <h2 class="text-2xl font-bold mb-8 text-center" data-lang="automotive-achievements">项目成果</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="text-center">
+                <p class="text-4xl font-bold text-primary">99.98%</p>
+                <p class="text-muted" data-lang="automotive-achievement-1">装配合格率</p>
+            </div>
+            <div class="text-center">
+                <p class="text-4xl font-bold text-primary">40%</p>
+                <p class="text-muted" data-lang="automotive-achievement-2">人工成本降低</p>
+            </div>
+            <div class="text-center">
+                <p class="text-4xl font-bold text-primary">35JPH</p>
+                <p class="text-muted" data-lang="automotive-achievement-3">最大生产节拍</p>
+            </div>
+            <div class="text-center">
+                <p class="text-4xl font-bold text-primary">15分钟</p>
+                <p class="text-muted" data-lang="automotive-achievement-4">车型切换时间</p>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- 汽车行业细分领域解决方案 -->
+    <section class="container mx-auto px-4 sm:px-6 lg:px-8 mb-20">
+        <h2 class="text-2xl font-bold mb-12 text-center" data-lang="automotive-sector-title">细分领域解决方案</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- 动力总成解决方案 -->
             <div class="bg-white rounded-lg shadow-card hover:shadow-card-hover transition-all transform hover:-translate-y-2">
-                <!-- <a href="/case-smartphone" class="block"> -->
+                <!-- <a href="/automotive/powertrain" class="block"> -->
                     <a href="#" class="block"></a>
-                    <img src="https://picsum.photos/id/160/400/300" alt="智能手机自动化组装" class="w-full h-48 object-cover">
+                    <img src="https://picsum.photos/id/1082/400/300" alt="汽车动力总成" class="w-full h-48 object-cover">
                     <div class="p-6">
-                        <h3 class="text-lg font-bold" data-lang="case-related-1-title">智能手机自动化组装</h3>
-                        <p class="text-muted" data-lang="case-related-1-desc">
-                            高精度模组装配与测试一体化解决方案
+                        <h3 class="text-lg font-bold" data-lang="automotive-sector-1-title">动力总成系统</h3>
+                        <p class="text-muted" data-lang="automotive-sector-1-desc">
+                            发动机、变速箱、电驱动系统的精密装配与测试解决方案
                         </p>
                     </div>
                 </a>
             </div>
 
-            <!-- 案例卡片2 -->
+            <!-- 白车身解决方案 -->
             <div class="bg-white rounded-lg shadow-card hover:shadow-card-hover transition-all transform hover:-translate-y-2">
-                <!-- <a href="/case-pcb" class="block"> -->
+                <!-- <a href="/automotive/body-in-white" class="block"> -->
                     <a href="#" class="block"></a>
-                    <img src="https://picsum.photos/id/119/400/300" alt="PCB板检测系统" class="w-full h-48 object-cover">
+                    <img src="https://picsum.photos/id/1073/400/300" alt="白车身制造" class="w-full h-48 object-cover">
                     <div class="p-6">
-                        <h3 class="text-lg font-bold" data-lang="case-related-2-title">PCB板智能检测系统</h3>
-                        <p class="text-muted" data-lang="case-related-2-desc">
-                            AI视觉引导的电路板缺陷检测技术
+                        <h3 class="text-lg font-bold" data-lang="automotive-sector-2-title">白车身制造</h3>
+                        <p class="text-muted" data-lang="automotive-sector-2-desc">
+                            柔性焊接生产线、机器人抓取与装配自动化系统
                         </p>
                     </div>
                 </a>
             </div>
 
-            <!-- 案例卡片3 -->
+            <!-- 零部件解决方案 -->
             <div class="bg-white rounded-lg shadow-card hover:shadow-card-hover transition-all transform hover:-translate-y-2">
-                <!-- <a href="/case-logistics" class="block"> -->
+                <!-- <a href="/automotive/components" class="block"> -->
                     <a href="#" class="block"></a>
-                    <img src="https://picsum.photos/id/216/400/300" alt="智能仓储物流" class="w-full h-48 object-cover">
+                    <img src="https://picsum.photos/id/1074/400/300" alt="汽车零部件" class="w-full h-48 object-cover">
                     <div class="p-6">
-                        <h3 class="text-lg font-bold" data-lang="case-related-3-title">3C产品智能仓储物流</h3>
-                        <p class="text-muted" data-lang="case-related-3-desc">
-                            自动化立体仓库与AGV物料搬运系统
+                        <h3 class="text-lg font-bold" data-lang="automotive-sector-3-title">零部件制造</h3>
+                        <p class="text-muted" data-lang="automotive-sector-3-desc">
+                            底盘、悬挂、内饰等零部件的自动化生产与检测方案
+                        </p>
+                    </div>
+                </a>
+            </div>
+
+            <!-- 汽车电子解决方案 -->
+            <div class="bg-white rounded-lg shadow-card hover:shadow-card-hover transition-all transform hover:-translate-y-2">
+                <!-- <a href="/automotive/electronics" class="block"> -->
+                    <a href="#" class="block"></a>
+                    <img src="https://picsum.photos/id/160/400/300" alt="汽车电子" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold" data-lang="automotive-sector-4-title">汽车电子系统</h3>
+                        <p class="text-muted" data-lang="automotive-sector-4-desc">
+                            车载电子、智能驾驶系统的精密制造与测试解决方案
                         </p>
                     </div>
                 </a>
@@ -210,7 +254,7 @@
     </section>
 </main>
 
-<!-- 固定 footer（与首页完全一致） -->
+<!-- 页脚 -->
 <footer class="bg-dark text-white pt-16 pb-8">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
@@ -300,3 +344,4 @@
 </footer>
 </body>
 </html>
+    
