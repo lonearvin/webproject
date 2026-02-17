@@ -1,5 +1,5 @@
 # 阶段1：构建阶段（包含编译环境）
-FROM golang:1.22-alpine AS builder
+FROM golang:1.23-alpine AS builder
 
 # 合并安装所有必要依赖（避免重复构建层）
 RUN apk add --no-cache git gcc musl-dev
