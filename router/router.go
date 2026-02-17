@@ -12,14 +12,25 @@ import (
 func SetRouter() *gin.Engine {
 	// 初始化 gin 引擎
 	r := gin.Default()
-	if gin.Mode() == gin.DebugMode {
-		r.Use(func(c *gin.Context) {
-			c.Writer.Header().Set("Cache-Control", "no-cache, no-store, must-revalidate")
-			c.Writer.Header().Set("Pragma", "no-cache")
-			c.Writer.Header().Set("Expires", "0")
-			c.Next()
-		})
-	}
+	
+	// 静态资源缓存控制中间件
+	r.Use(func(c *gin.Context) {
+		path := c.Request.URL.Path
+		if len(path) > 8 && path[:8] == "/static/" {
+			c.Writer.Header().Set("Cache-Control", "public, max-age=31536000, immutable")
+		} else if len(path) > 9 && path[:9] == "/picture/" {
+			c.Writer.Header().Set("Cache-Control", "public, max-age=31536000, immutable")
+		} else if len(path) > 7 && path[:7] == "/video/" {
+			c.Writer.Header().Set("Cache-Control", "public, max-age=31536000, immutable")
+		} else {
+			if gin.Mode() == gin.DebugMode {
+				c.Writer.Header().Set("Cache-Control", "no-cache, no-store, must-revalidate")
+				c.Writer.Header().Set("Pragma", "no-cache")
+				c.Writer.Header().Set("Expires", "0")
+			}
+		}
+		c.Next()
+	})
 	// 注册静态资源路径
 	staticPaths := map[string]string{
 		"/static":  "./static",
