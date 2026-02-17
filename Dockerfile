@@ -1,5 +1,5 @@
 # 阶段1：构建阶段（包含编译环境）
-FROM golang:1.23-alpine AS builder
+FROM docker.m.daocloud.io/library/golang:1.23-alpine AS builder
 
 # 合并安装所有必要依赖（避免重复构建层）
 RUN apk add --no-cache git gcc musl-dev
@@ -24,7 +24,7 @@ COPY . .
 RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o main .
 
 # 阶段2：运行阶段（仅保留运行所需文件，镜像体积从几百M降到几M）
-FROM alpine:3.20
+FROM docker.m.daocloud.io/library/alpine:3.20
 
 # 安装时区等基础工具（可选，根据你的应用需求）
 RUN apk add --no-cache tzdata
