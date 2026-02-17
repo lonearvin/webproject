@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   webproject:
     build: .
@@ -7,4 +5,7 @@ services:
       - "8080:8080"
     environment:
       - GIN_MODE=release
+    # 仅挂载配置目录到容器内的 /app/config（核心修复）
+    volumes:
+      - ./config:/app/config
     restart: unless-stopped
