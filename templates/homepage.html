@@ -4,71 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>凌能智控 - 自动化科技公司</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../static/css/output.css">
     <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://cdn.staticfile.net/Chart.js/3.9.1/chart.min.js"></script>
+    <script src="../static/js/min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="icon" href="../static/picture/logo.webp" type="image/x-icon">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#165DFF',
-                        secondary: '#0FC6C2',
-                        dark: '#1D2939',
-                        light: '#F9FAFB',
-                        muted: '#667085'
-                    },
-                    fontFamily: {
-                        inter: ['Inter', 'sans-serif'],
-                    },
-                    boxShadow: {
-                        'card': '0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.03)',
-                        'card-hover': '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
-                    }
-                },
+    <style>
+        .content-auto {
+            content-visibility: auto;
+        }
+
+        .text-gradient {
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .bg-glass {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+        }
+
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+            100% {
+                transform: translateY(0px);
             }
         }
-    </script>
 
-    <style type="text/tailwindcss">
-        @layer utilities {
-            .content-auto {
-                content-visibility: auto;
-            }
-
-            .text-gradient {
-                background-clip: text;
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-            }
-
-            .bg-glass {
-                background: rgba(255, 255, 255, 0.7);
-                backdrop-filter: blur(10px);
-            }
-
-            .animate-float {
-                animation: float 6s ease-in-out infinite;
-            }
-
-            @keyframes float {
-                0% {
-                    transform: translateY(0px);
-                }
-                50% {
-                    transform: translateY(-20px);
-                }
-                100% {
-                    transform: translateY(0px);
-                }
-            }
-            .animate-pulse-slow {
-                animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-            }
+        .animate-pulse-slow {
+            animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
         }
     </style>
 </head>
@@ -415,10 +391,9 @@
 
     <!-- 案例研究 -->
     <!--        TODO-->
-    <section id="case-studies" class="py-20 bg-white">
+    <!-- <section id="case-studies" class="py-20 bg-white">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <!-- <span class="text-primary font-medium">案例研究</span> -->
                 <h2 class="text-[clamp(2rem,4vw,3rem)] font-bold mt-2 mb-4">成功项目展示</h2>
                 <p class="text-muted max-w-2xl mx-auto">
                     探索我们如何通过自动化科技技术解决方案帮助客户解决复杂问题并取得突破性成果。</p>
@@ -489,7 +464,7 @@
                 </a>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- 客户评价 -->
     <section id="testimonials" class="py-20 bg-primary/5">
