@@ -6,62 +6,22 @@
 
 ## 部署步骤
 
-### 1. 确保安装了Docker和Docker Compose
+### 1. 确保安装了Docker、Docker Compose和harbor-registry
 
 - [Docker安装指南](https://docs.docker.com/get-docker/)
 - [Docker Compose安装指南](https://docs.docker.com/compose/install/)
+- [harbor-registry安装指南](https://goharbor.io/docs/2.4.0/install-config/configure-harbor/)
 
 ### 2. 构建和运行容器
 
-在项目根目录下执行以下命令：
+需要配置dockerfile中的镜像地址为harbor-registry的地址
+需要配置容器运行时的环境变量docker-compose.yml
 
 ```bash
-# 构建镜像
-docker-compose build
+sudo chmod +X deploy.sh
 
-# 运行容器
-docker-compose up -d
+./deploy.sh
 ```
-
-### 3. 访问网站
-
-容器运行后，可以通过以下地址访问网站：
-
-```
-http://localhost:8080
-```
-
-### 4. 查看容器状态
-
-```bash
-# 查看容器状态
-docker-compose ps
-
-# 查看容器日志
-docker-compose logs -f
-```
-
-### 5. 停止容器
-
-```bash
-docker-compose down
-```
-
-## 配置说明
-
-### Dockerfile
-
-- 使用最新的Go Alpine镜像作为基础
-- 安装必要的依赖（git）
-- 构建应用并运行
-
-### docker-compose.yml
-
-- 构建本地镜像
-- 映射端口8080到宿主机
-- 设置环境变量GIN_MODE=release
-- 挂载本地目录到容器（便于开发调试）
-- 配置容器自动重启
 
 ## 注意事项
 
