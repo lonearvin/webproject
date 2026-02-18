@@ -1,14 +1,17 @@
+
+export VERSION=v.1.0.0
+
 # 打包镜像
-sudo docker build -t webproject:latest .
+sudo docker build -t webproject:${VERSION} .
 
 # 打标签
-sudo docker tag webproject:latest 192.168.1.12:19001/webproject/webproject:latest
+sudo docker tag webproject:${VERSION} 192.168.1.12:19001/webproject/webproject:${VERSION}
 
 # 推送镜像
-sudo docker push 192.168.1.12:19001/webproject/webproject:latest
+sudo docker push 192.168.1.12:19001/webproject/webproject:${VERSION}
 
 # 拉取镜像，部署
-sudo docker pull 192.168.1.12:19001/webproject/webproject:latest
+sudo docker pull 192.168.1.12:19001/webproject/webproject:${VERSION}
 
 sudo docker stop webproject
 sudo docker rm webproject
@@ -24,4 +27,4 @@ sudo docker run -d --name webproject \
   -v $(pwd)/log:/app/log \
   -e GIN_MODE=release \
   --restart unless-stopped \
-  192.168.1.12:19001/webproject/webproject:latest
+  192.168.1.12:19001/webproject/webproject:${VERSION}
