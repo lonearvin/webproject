@@ -1,4 +1,3 @@
-
 # 打包镜像
 sudo docker build -t webproject:latest .
 
@@ -10,6 +9,9 @@ sudo docker push 192.168.1.12:19001/webproject/webproject:latest
 
 # 拉取镜像，部署
 sudo docker pull 192.168.1.12:19001/webproject/webproject:latest
+
+sudo docker stop webproject
+sudo docker rm webproject
 
 # 部署容器
 sudo docker run -d --name webproject \
