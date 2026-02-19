@@ -1,5 +1,5 @@
 
-export VERSION=v.1.0.0
+export VERSION=v.1.0.1
 
 # 打包镜像
 sudo docker build -t webproject:${VERSION} .
