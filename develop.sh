@@ -16,8 +16,6 @@ sudo docker pull 192.168.1.12:19001/webproject/webproject:${VERSION}
 sudo docker stop webproject
 sudo docker rm webproject
 
-sudo chmod +x develop.sh
-
 # 部署容器
 sudo docker run -d --name webproject \
   -p 8080:8080 \
