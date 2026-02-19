@@ -17,7 +17,7 @@ database:
 GIN_MODE:
   model: debug
 Redis:
-  Host: 127.0.0.1
+  Host: 192.168.1.12
   Port: 6379
   Username:
   Password:

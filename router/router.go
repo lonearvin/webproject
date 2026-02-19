@@ -45,6 +45,9 @@ func SetRouter() *gin.Engine {
 	// 首页
 	r.GET("/", controllers.Home)
 
+	// 案例页面
+	r.GET("/cases", controllers.GetCases)
+
 	// 视频页
 	r.GET("/api/video", controllers.GetProductVideo)
 

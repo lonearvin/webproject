@@ -13,6 +13,7 @@ directories=(
     "static/picture/semiconductor"
     "static/picture/medical"
     "static/picture/chemicalAutomation"
+    "static/case/casePicture"
 )
 
 # WebP质量设置 (80-85通常在质量和大小之间有很好的平衡)
