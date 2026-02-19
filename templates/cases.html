@@ -1215,6 +1215,13 @@
         const caseItems = document.querySelectorAll('.case-item');
         let isDropdownOpen = false;
 
+        function initDropdown() {
+            categoryDropdown.style.opacity = '0';
+            categoryDropdown.style.visibility = 'hidden';
+        }
+
+        initDropdown();
+
         categoryToggle.addEventListener('click', (e) => {
             e.stopPropagation();
             isDropdownOpen = !isDropdownOpen;
