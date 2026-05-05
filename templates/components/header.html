@@ -1,0 +1,44 @@
+<header id="navbar" class="fixed w-full top-0 z-50 transition-all duration-300">
+    <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between" role="navigation" aria-label="主导航">
+        <div class="flex items-center">
+            <a href="/" class="flex items-center" aria-label="返回首页">
+                <img src="/static/picture/logonew.webp" alt="LINTRONIX Logo" loading="lazy" class="h-10 w-36 rounded-full" />
+            </a>
+        </div>
+
+        <div class="hidden md:flex items-center space-x-8">
+            <a href="/" class="text-dark hover:text-primary transition-colors" aria-current="page">首页</a>
+            <a href="/cases" class="text-dark hover:text-primary transition-colors">成功案例</a>
+            <a href="#about" class="text-dark hover:text-primary transition-colors">关于我们</a>
+            <a href="#services" class="text-dark hover:text-primary transition-colors">服务</a>
+            <a href="#case-studies" class="text-dark hover:text-primary transition-colors">案例</a>
+            <a href="#testimonials" class="text-dark hover:text-primary transition-colors">合作客户</a>
+        </div>
+
+        <div class="hidden md:block">
+            <a href="#contact"
+               class="bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded-lg transition-all transform hover:scale-105"
+               aria-label="联系我们">
+                联系我们
+            </a>
+        </div>
+
+        <button id="menu-toggle" class="md:hidden text-dark focus:outline-none" aria-label="切换移动端菜单" aria-expanded="false">
+            <i class="fa fa-bars text-2xl"></i>
+        </button>
+    </nav>
+
+    <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg absolute w-full" aria-hidden="true">
+        <div class="container mx-auto px-4 py-4 flex flex-col space-y-4">
+            <a href="#about" class="text-dark hover:text-primary transition-colors py-2" aria-label="关于我们">关于我们</a>
+            <a href="#services" class="text-dark hover:text-primary transition-colors py-2" aria-label="服务">服务</a>
+            <a href="#case-studies" class="text-dark hover:text-primary transition-colors py-2" aria-label="案例">案例</a>
+            <a href="#testimonials" class="text-dark hover:text-primary transition-colors py-2" aria-label="合作客户">合作客户</a>
+            <a href="#contact"
+               class="bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-lg transition-all text-center"
+               aria-label="联系我们">
+                联系我们
+            </a>
+        </div>
+    </div>
+</header>

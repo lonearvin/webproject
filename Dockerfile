@@ -1,43 +1,57 @@
-# 阶段1：构建阶段（包含编译环境）
-FROM docker.m.daocloud.io/library/golang:1.23-alpine AS builder
+# 多阶段构建：阶段1 - 前端构建阶段
+FROM docker.m.daocloud.io/library/node:20-alpine AS frontend-builder
 
-# 合并安装所有必要依赖（避免重复构建层）
-RUN apk add --no-cache git gcc musl-dev
-
-# 设置工作目录
 WORKDIR /app
 
-# 配置国内Go代理，解决下载超时
+# 复制前端依赖文件
+COPY package.json package-lock.json ./
+
+# 设置npm代理
+ENV npm_config_registry=https://registry.npmmirror.com
+
+# 安装依赖（包括开发依赖，因为tailwindcss是开发依赖）
+RUN npm ci
+
+# 复制前端资源文件
+COPY tailwind.config.js ./
+COPY static/css/input.css static/css/custom.css ./static/css/
+
+# 构建CSS
+RUN npm run build:css
+
+# 阶段2 - Go构建阶段
+FROM docker.m.daocloud.io/library/golang:1.23-alpine AS go-builder
+
+RUN apk add --no-cache git gcc musl-dev
+
+WORKDIR /app
+
 ENV GOPROXY=https://mirrors.aliyun.com/goproxy/,direct
 ENV GOSUMDB=off
 
-# 先复制依赖文件（利用Docker缓存，代码修改不重新下载依赖）
 COPY go.mod go.sum ./
-
-# 下载依赖
 RUN go mod download
 
-# 复制所有源代码
 COPY . .
 
-# 构建应用（添加CGO_ENABLED=0关闭CGO，生成静态编译二进制，无需系统依赖）
+# 复制前端构建产物
+COPY --from=frontend-builder /app/static/css/output.css ./static/css/
+
 RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o main .
 
-# 阶段2：运行阶段（仅保留运行所需文件，镜像体积从几百M降到几M）
+# 阶段3 - 运行阶段
 FROM docker.m.daocloud.io/library/alpine:3.20
 
-# 安装时区等基础工具（可选，根据你的应用需求）
 RUN apk add --no-cache tzdata
 ENV TZ=Asia/Shanghai
 
-# 设置工作目录
 WORKDIR /app
 
-# 从构建阶段复制编译好的二进制文件
-COPY --from=builder /app/main .
+COPY --from=go-builder /app/main .
+COPY --from=go-builder /app/static ./static
+COPY --from=go-builder /app/templates ./templates
+COPY --from=go-builder /app/config ./config
 
-# 暴露端口
 EXPOSE 8080
 
-# 运行应用
 CMD ["./main"]
