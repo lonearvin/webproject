@@ -9,9 +9,7 @@ import (
 )
 
 func GetService(ctx *gin.Context) {
-	// 这里是解析案例
 	caseID := ctx.Query("id")
-	//fmt.Println(caseID)
 	var htmlFilePath string
 	if caseID == "3C" {
 		htmlFilePath = config.AppConfig.App.TemplatePath + "/ServicePages/ServicePages3C.html"
@@ -25,12 +23,15 @@ func GetService(ctx *gin.Context) {
 		htmlFilePath = config.AppConfig.App.TemplatePath + "/ServicePages/medical_equipment_automation.html"
 	} else if caseID == "chemical_automation" {
 		htmlFilePath = config.AppConfig.App.TemplatePath + "/ServicePages/chemical_automation.html"
+	} else {
+		ctx.HTML(404, "404.html", gin.H{})
+		return
 	}
-	// 检查是否存在这个地址
+
 	_, err := os.Open(htmlFilePath)
 	if err != nil {
-		ctx.File(config.AppConfig.App.TemplatePath + "/404.html")
 		fmt.Println(err)
+		ctx.HTML(404, "404.html", gin.H{})
 		return
 	}
 	ctx.File(htmlFilePath)

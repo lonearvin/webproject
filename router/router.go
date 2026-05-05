@@ -1,18 +1,35 @@
 package router
 
 import (
-	"github.com/gin-gonic/gin"
+	"html/template"
 	"log"
 	"net/http"
 	"os"
 	"webproject/config"
 	"webproject/controllers"
+
+	"github.com/gin-gonic/gin"
 )
 
 func SetRouter() *gin.Engine {
-	// 初始化 gin 引擎
 	r := gin.Default()
-	
+
+	r.SetFuncMap(template.FuncMap{})
+	r.LoadHTMLFiles(
+		config.AppConfig.App.TemplatePath+"/homepage.html",
+		config.AppConfig.App.TemplatePath+"/cases.html",
+		config.AppConfig.App.TemplatePath+"/404.html",
+		config.AppConfig.App.TemplatePath+"/components/header.html",
+		config.AppConfig.App.TemplatePath+"/components/footer.html",
+		config.AppConfig.App.TemplatePath+"/components/contact-form.html",
+		config.AppConfig.App.TemplatePath+"/ServicePages/ServicePages3C.html",
+		config.AppConfig.App.TemplatePath+"/ServicePages/New_Energy_Services.html",
+		config.AppConfig.App.TemplatePath+"/ServicePages/automotive_automation.html",
+		config.AppConfig.App.TemplatePath+"/ServicePages/semiconductor_automation.html",
+		config.AppConfig.App.TemplatePath+"/ServicePages/medical_equipment_automation.html",
+		config.AppConfig.App.TemplatePath+"/ServicePages/chemical_automation.html",
+	)
+
 	// 静态资源缓存控制中间件
 	r.Use(func(c *gin.Context) {
 		path := c.Request.URL.Path
@@ -32,15 +49,8 @@ func SetRouter() *gin.Engine {
 		c.Next()
 	})
 	// 注册静态资源路径
-	staticPaths := map[string]string{
-		"/static":  "./static",
-		"/picture": "./picture",
-		"/video":   "./video",
-	}
-	for route, path := range staticPaths {
-		r.Static(route, path)
-	}
-	r.StaticFile("/favicon.ico", "./picture/favicon.ico")
+	r.Static("/static", "./static")
+	r.StaticFile("/favicon.ico", "./static/picture/favicon.ico")
 
 	// 首页
 	r.GET("/", controllers.Home)

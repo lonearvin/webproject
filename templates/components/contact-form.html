@@ -1,0 +1,141 @@
+<section id="contact" class="py-20 bg-white" aria-labelledby="contact-heading">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 id="contact-heading" class="text-[clamp(2rem,4vw,3rem)] font-bold mt-2 mb-4">与我们取得联系</h2>
+            <p class="text-muted max-w-2xl mx-auto">
+                无论您是对我们的服务感兴趣，还是有合作机会，或者只是想了解更多关于LINTRONIX的信息，我们都很乐意听取您的意见。
+            </p>
+        </div>
+
+        <div class="flex flex-col lg:flex-row gap-12">
+            <div class="w-full lg:w-1/2">
+                <div class="bg-light rounded-xl p-8 shadow-card">
+                    <h3 class="text-2xl font-bold mb-6">发送消息</h3>
+
+                    <form action="/contact" method="post" id="contactForm" aria-label="联系表单">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
+                            <div class="form-group">
+                                <label for="name" class="block text-sm font-medium text-muted mb-2">姓名</label>
+                                <input type="text" id="name" name="name" required
+                                       class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors"
+                                       aria-required="true" />
+                                <div class="error-message hidden text-red-500 text-xs mt-1" role="alert">不能为空</div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="block text-sm font-medium text-muted mb-2">邮箱</label>
+                                <input type="email" id="email" name="email" required
+                                       class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors"
+                                       aria-required="true" />
+                                <div class="error-message hidden text-red-500 text-xs mt-1" role="alert">不能为空</div>
+                                <div class="email-format-error hidden text-red-500 text-xs mt-1" role="alert">
+                                    请输入有效的邮箱地址
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-6">
+                            <div class="form-group">
+                                <label for="subject" class="block text-sm font-medium text-muted mb-2">主题</label>
+                                <input type="text" id="subject" name="subject" required
+                                       class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors"
+                                       aria-required="true" />
+                                <div class="error-message hidden text-red-500 text-xs mt-1" role="alert">不能为空</div>
+                            </div>
+                        </div>
+
+                        <div class="mb-6">
+                            <div class="form-group">
+                                <label for="message" class="block text-sm font-medium text-muted mb-2">消息内容</label>
+                                <textarea id="message" name="message" rows="5" required
+                                          class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors resize-none"
+                                          aria-required="true"></textarea>
+                                <div class="error-message hidden text-red-500 text-xs mt-1" role="alert">不能为空</div>
+                            </div>
+                        </div>
+
+                        <button type="submit"
+                                class="w-full bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-lg transition-all transform hover:scale-105"
+                                aria-label="发送消息">
+                            发送消息
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="w-full lg:w-1/2">
+                <div class="bg-light rounded-xl p-8 shadow-card mb-8">
+                    <h3 class="text-2xl font-bold mb-6">联系方式</h3>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary flex-shrink-0" role="img" aria-label="地址图标">
+                                <i class="fa fa-map-marker"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="font-bold mb-1">地址</h4>
+                                <p class="text-muted">上海市浦东新区</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary flex-shrink-0" role="img" aria-label="电话图标">
+                                <i class="fa fa-phone"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="font-bold mb-1">电话</h4>
+                                <p class="text-muted">13918704690</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary flex-shrink-0" role="img" aria-label="邮箱图标">
+                                <i class="fa fa-envelope"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="font-bold mb-1">邮箱</h4>
+                                <p class="text-muted">lintronix@163.com</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8">
+                        <h4 class="font-bold mb-4">关注我们</h4>
+                        <div class="flex space-x-4" role="social-links">
+                            <a href="#" class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors" aria-label="Facebook">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors" aria-label="Twitter">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors" aria-label="LinkedIn">
+                                <i class="fa fa-linkedin"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors" aria-label="Instagram">
+                                <i class="fa fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-light rounded-xl p-8 shadow-card">
+                    <h3 class="text-2xl font-bold mb-6">工作时间</h3>
+
+                    <div class="space-y-4">
+                        <div class="flex justify-between">
+                            <span class="text-muted">周一至周五</span>
+                            <span class="font-medium">9:00 AM - 6:00 PM</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-muted">周六</span>
+                            <span class="font-medium">10:00 AM - 4:00 PM</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-muted">周日</span>
+                            <span class="font-medium">休息</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -3,939 +3,478 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Lintronix - 专业自动化科技解决方案提供商，专注于新能源、汽车、半导体等领域的智能自动化技术">
+    <meta name="keywords" content="自动化,科技,新能源,汽车,半导体,智能制造">
+    <meta name="author" content="LINTRONIX">
     <title>凌能智控 - 自动化科技公司</title>
-    <link rel="stylesheet" href="../static/css/output.css">
+    <link rel="stylesheet" href="/static/css/output.css">
     <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="../static/js/min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" href="../static/picture/logo.webp" type="image/x-icon">
-    <style>
-        .content-auto {
-            content-visibility: auto;
-        }
-
-        .text-gradient {
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .bg-glass {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(10px);
-        }
-
-        .animate-float {
-            animation: float 6s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0% {
-                transform: translateY(0px);
-            }
-            50% {
-                transform: translateY(-20px);
-            }
-            100% {
-                transform: translateY(0px);
-            }
-        }
-
-        .animate-pulse-slow {
-            animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-        }
-    </style>
+    <link rel="icon" href="/static/picture/logo.webp" type="image/x-icon">
 </head>
 <body class="font-inter text-dark bg-light antialiased">
-<!-- 导航栏 -->
-<header id="navbar" class="fixed w-full top-0 z-50 transition-all duration-300">
-    <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
-        <div class="flex items-center">
-            <a href="#" class="flex items-center">
-                <!--                    <div class="w-10 h-10 rounded-lg bg-primary flex items-center justify-center text-white">-->
-                <!--                        <i class="fa fa-flask text-xl"></i>-->
-                <!--                    </div>-->
-                <img src="../static/picture/logonew.webp" alt="logo" loading="lazy" class="h-10 w-36 rounded-full">
-            </a>
-        </div>
+    {{ template "header.html" }}
 
-        <!-- 桌面导航 -->
-        <div class="hidden md:flex items-center space-x-8">
-            <a href="/" class="text-dark hover:text-primary transition-colors">首页</a>
-            <a href="/cases" class="text-dark hover:text-primary transition-colors">成功案例</a>
-            <a href="#about" class="text-dark hover:text-primary transition-colors">关于我们</a>
-            <a href="#services" class="text-dark hover:text-primary transition-colors">服务</a>
-            <a href="#case-studies" class="text-dark hover:text-primary transition-colors">案例</a>
-            <a href="#testimonials" class="text-dark hover:text-primary transition-colors">合作客户</a>
-        </div>
+    <main>
+        <section class="pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden relative bg-hero-gradient">
+            <div class="absolute top-20 left-10 w-64 h-64 bg-primary/10 rounded-full blur-3xl animate-pulse-slow"></div>
+            <div class="absolute bottom-20 right-10 w-80 h-80 bg-secondary/10 rounded-full blur-3xl animate-pulse-slow" style="animation-delay: 1.5s;"></div>
+            <div class="absolute top-1/2 left-1/4 w-20 h-20 bg-cyan-400/20 rounded-full animate-float"></div>
+            <div class="absolute top-1/3 right-1/4 w-16 h-16 bg-purple-400/20 rounded-full animate-float-delayed"></div>
+            <div class="absolute bottom-1/3 left-1/3 w-12 h-12 bg-pink-400/20 rounded-full animate-float-slow"></div>
+            
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="w-full md:w-1/2 mb-12 md:mb-0 animate-fade-in" id="hero-content">
+                        <span class="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-4">
+                            创新自动化技术领导者
+                        </span>
+                        <h1 class="text-[clamp(2.5rem,5vw,4rem)] font-bold leading-tight mb-6">
+                            突破自动化科技<span
+                                class="text-gradient bg-gradient-to-r from-primary via-purple-500 to-cyan-500">创新边界</span>
+                        </h1>
+                        <p class="text-lg md:text-xl text-muted mb-8 max-w-xl">
+                            Lintronix 致力于开发前沿自动化技术解决方案，推动新能源、运输和汽车领域的智能创新发展。
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <a href="#services"
+                               class="bg-gradient-to-r from-primary to-purple-600 hover:from-primary/90 hover:to-purple-500 text-white px-8 py-4 rounded-xl transition-all transform hover:scale-105 text-center shadow-lg hover:shadow-xl">
+                                了解我们的服务
+                            </a>
+                            <a href="#contact"
+                               class="border-2 border-primary text-primary hover:bg-primary/10 px-8 py-4 rounded-xl transition-all text-center hover:border-purple-500">
+                                联系我们
+                            </a>
+                        </div>
+                        
+                        <div class="flex items-center gap-8 mt-10">
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-primary">50+</div>
+                                <div class="text-sm text-muted">服务客户</div>
+                            </div>
+                            <div class="w-px h-12 bg-gray-200"></div>
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-primary">100+</div>
+                                <div class="text-sm text-muted">成功项目</div>
+                            </div>
+                            <div class="w-px h-12 bg-gray-200"></div>
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-primary">98%</div>
+                                <div class="text-sm text-muted">客户满意度</div>
+                            </div>
+                        </div>
+                    </div>
 
-        <!-- 联系按钮 -->
-        <div class="hidden md:block">
-            <a href="#contact"
-               class="bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded-lg transition-all transform hover:scale-105">
-                联系我们
-            </a>
-        </div>
+                    <div class="w-full md:w-1/2 relative animate-slide-right" id="hero-image">
+                        <div class="relative z-10 rounded-3xl overflow-hidden shadow-2xl animate-pulse-glow">
+                            <img src="/static/picture/mainfirst.webp" alt="自动化科技" loading="lazy" class="w-full h-auto" />
+                        </div>
+                        <div class="absolute -bottom-4 -left-4 bg-white rounded-2xl p-4 shadow-xl animate-float">
+                            <div class="flex items-center gap-3">
+                                <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                                    <i class="fa fa-check text-green-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <div class="font-semibold">行业认证</div>
+                                    <div class="text-sm text-muted">ISO 9001:2015</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute -top-4 -right-4 bg-white rounded-2xl p-4 shadow-xl animate-float-delayed">
+                            <div class="flex items-center gap-3">
+                                <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                                    <i class="fa fa-award text-blue-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <div class="font-semibold">技术领先</div>
+                                    <div class="text-sm text-muted">国家高新技术企业</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <!-- 移动端菜单按钮 -->
-        <div class="md:hidden">
-            <button id="menu-toggle" class="text-dark focus:outline-none">
-                <i class="fa fa-bars text-2xl"></i>
-            </button>
-        </div>
-    </nav>
-
-    <!-- 移动端菜单 -->
-    <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg absolute w-full">
-        <div class="container mx-auto px-4 py-4 flex flex-col space-y-4">
-            <a href="#about" class="text-dark hover:text-primary transition-colors py-2">关于我们</a>
-            <a href="#services" class="text-dark hover:text-primary transition-colors py-2">服务</a>
-            <!--                <a href="#team" class="text-dark hover:text-primary transition-colors py-2">团队</a>-->
-            <a href="#case-studies" class="text-dark hover:text-primary transition-colors py-2">案例</a>
-            <a href="#testimonials" class="text-dark hover:text-primary transition-colors py-2">合作客户</a>
-            <!--                <a href="#contact" class="text-dark hover:text-primary transition-colors py-2">联系我们</a>-->
-            <a href="#contact"
-               class="bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-lg transition-all text-center">
-                联系我们
-            </a>
-        </div>
-    </div>
-</header>
-
-<main>
-    <section class="pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden relative">
-        <!-- <div class="absolute top-0 right-0 w-1/2 h-full bg-primary/5 -skew-x-12 transform origin-top-right z-0"></div> -->
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="flex flex-col md:flex-row items-center">
-                <div class="w-full md:w-1/2 mb-12 md:mb-0">
-                    <h1 class="text-[clamp(2.5rem,5vw,4rem)] font-bold leading-tight mb-6">
-                        突破自动科技<span
-                            class="text-gradient bg-gradient-to-r from-primary to-secondary">创新边界</span>
-                    </h1>
-                    <p class="text-lg md:text-xl text-muted mb-8 max-w-xl">
-                        Lintronix 致力于开发前沿自动化技术解决方案，推动新能源、运输和汽车领域的智能创新发展。
+        <section id="about" class="py-20 bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16 animate-fade-in">
+                    <h2 class="text-[clamp(2rem,4vw,3rem)] font-bold mt-2 mb-4">我们的使命与愿景</h2>
+                    <p class="text-muted max-w-2xl mx-auto">Lintronix
+                        成立于2025年，是一家专注于自动化技术创新的研发公司。我们的使命是通过自动化技术改善人类的生活质量，让智能科技赋能万物，构建高效、可持续的未来世界。
                     </p>
-                    <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="#services"
-                           class="bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-lg transition-all transform hover:scale-105 text-center">
-                            了解我们的服务
-                        </a>
-                        <a href="#contact"
-                           class="border-2 border-primary text-primary hover:bg-primary/5 px-8 py-4 rounded-lg transition-all text-center">
-                            联系我们
-                        </a>
-                    </div>
                 </div>
 
-                <div class="w-full md:w-1/2 relative">
-                    <div class="relative z-10 rounded-2xl overflow-hidden shadow-card hover:shadow-card-hover transition-all transform hover:-translate-y-2">
-                        <img src="../static/picture/mainfirst.webp" alt="" loading="lazy" class="w-full h-auto">
-                    </div>
-                    <!-- <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-secondary/20 rounded-full z-0 animate-pulse-slow"></div> -->
-                    <!-- <div class="absolute -top-6 -right-6 w-40 h-40 bg-primary/20 rounded-full z-0 animate-pulse-slow" -->
-                         <!-- style="animation-delay: 2s;"></div> -->
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 关于我们 -->
-    <section id="about" class="py-20 bg-white">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <!-- <span class="text-primary font-medium">关于我们</span> -->
-                <h2 class="text-[clamp(2rem,4vw,3rem)] font-bold mt-2 mb-4">我们的使命与愿景</h2>
-                <p class="text-muted max-w-2xl mx-auto">Lintronix
-                    成立于2025年，是一家专注于自动化技术创新的研发公司。我们的使命是通过自动化技术改善人类的生活质量，让智能科技赋能万物，构建高效、可持续的未来世界。
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-light rounded-xl p-8 shadow-card hover:shadow-card-hover transition-all transform hover:-translate-y-2">
-                    <div class="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
-                        <i class="fa fa-bullseye text-2xl text-primary"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">我们的使命</h3>
-                    <p class="text-muted">
-                        以创新技术驱动自动化变革，为客户提供智能、精准的解决方案，提升产业效能，共创人机协同的美好时代。</p>
-                </div>
-
-                <div class="bg-light rounded-xl p-8 shadow-card hover:shadow-card-hover transition-all transform hover:-translate-y-2">
-                    <div class="w-16 h-16 bg-secondary/10 rounded-lg flex items-center justify-center mb-6">
-                        <i class="fa fa-eye text-2xl text-secondary"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">我们的愿景</h3>
-                    <p class="text-muted">
-                        成为全球自动化科技领域的引领者，让智能科技赋能万物，构建高效、可持续的未来世界。</p>
-                </div>
-
-                <div class="bg-light rounded-xl p-8 shadow-card hover:shadow-card-hover transition-all transform hover:-translate-y-2">
-                    <div class="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
-                        <i class="fa fa-heart text-2xl text-primary"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">我们的价值观</h3>
-                    <p class="text-muted">创新、卓越、合作、责任和诚信是我们的核心价值观，指导我们的每一项决策和行动。</p>
-                </div>
-            </div>
-
-            <div class="mt-20 flex flex-col md:flex-row items-center gap-12">
-                <div class="w-full md:w-1/2">
-                    <img src="https://picsum.photos/id/20/800/600" alt="公司团队合影"
-                         class="rounded-2xl shadow-lg w-full h-auto">
-                </div>
-
-                <div class="w-full md:w-1/2">
-                    <!-- 标题区 -->
-                    <span class="text-primary font-medium">公司愿景</span>
-                    <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold mt-2 mb-6">成长蓝图</h2>
-                    <p class="text-muted mb-6">
-                        Lintronix 成立于 2025 年，专注于智能自动化科技创新。我们秉持务实与探索精神，计划在未来逐步实现以下里程碑。
-                    </p>
-
-                    <!-- 时间线条目 -->
-                    <div class="space-y-6">
-                        <!-- 2025 -->
-                        <div class="flex">
-                            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
-                                <i class="fa fa-flag"></i>
-                            </div>
-                            <div class="ml-4">
-                                <h4 class="text-lg font-semibold">公司成立</h4>
-                                <p class="text-muted">在上海组建核心技术团队，自动化科技工作站的建立。</p>
-                            </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-light rounded-xl p-8 shadow-card hover:shadow-card-hover transition-all transform hover:-translate-y-2 animate-fade-in" style="transition-delay: 100ms;">
+                        <div class="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
+                            <i class="fa fa-bullseye text-2xl text-primary"></i>
                         </div>
+                        <h3 class="text-xl font-bold mb-4">我们的使命</h3>
+                        <p class="text-muted">
+                            以创新技术驱动自动化变革，为客户提供智能、精准的解决方案，提升产业效能，共创人机协同的美好时代。</p>
+                    </div>
 
-                        <!-- 2026 -->
-                        <div class="flex">
-                            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
-                                <i class="fa fa-rocket"></i>
-                            </div>
-                            <div class="ml-4">
-                                <h4 class="text-lg font-semibold">打开市场</h4>
-                                <p class="text-muted">成为国内顶尖自动化科技机构。</p>
-                            </div>
+                    <div class="bg-light rounded-xl p-8 shadow-card hover:shadow-card-hover transition-all transform hover:-translate-y-2 animate-fade-in" style="transition-delay: 200ms;">
+                        <div class="w-16 h-16 bg-secondary/10 rounded-lg flex items-center justify-center mb-6">
+                            <i class="fa fa-eye text-2xl text-secondary"></i>
                         </div>
+                        <h3 class="text-xl font-bold mb-4">我们的愿景</h3>
+                        <p class="text-muted">
+                            成为全球自动化科技领域的引领者，让智能科技赋能万物，构建高效、可持续的未来世界。</p>
+                    </div>
 
-                        <!-- 2028 -->
-                        <!-- <div class="flex">
-                            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
-                                <i class="fa fa-line-chart"></i>
-                            </div>
-                            <div class="ml-4">
-                                <h4 class="text-lg font-semibold">A轮融资</h4>
-                                <p class="text-muted">完成千万元级融资，扩充研发与生产能力。</p>
-                            </div>
-                        </div> -->
-
-                        <!-- 2030 -->
-                        <div class="flex">
-                            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
-                                <i class="fa fa-globe"></i>
-                            </div>
-                            <div class="ml-4">
-                                <h4 class="text-lg font-semibold">国际合作</h4>
-                                <p class="text-muted">与欧美领先自动化中心建立联合，开启全球市场布局。</p>
-                            </div>
+                    <div class="bg-light rounded-xl p-8 shadow-card hover:shadow-card-hover transition-all transform hover:-translate-y-2 animate-fade-in" style="transition-delay: 300ms;">
+                        <div class="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
+                            <i class="fa fa-heart text-2xl text-primary"></i>
                         </div>
-
-                        <!-- 2035 -->
-                        <div class="flex">
-                            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
-                                <i class="fa fa-trophy"></i>
-                            </div>
-                            <div class="ml-4">
-                                <h4 class="text-lg font-semibold">行业引领</h4>
-                                <p class="text-muted">成为全球自动化领域领导者，服务覆盖 50+ 国家。</p>
-                            </div>
-                        </div>
+                        <h3 class="text-xl font-bold mb-4">我们的价值观</h3>
+                        <p class="text-muted">创新、卓越、合作、责任和诚信是我们的核心价值观，指导我们的每一项决策和行动。</p>
                     </div>
                 </div>
 
-            </div>
-        </div>
-    </section>
-
-    <!-- 服务介绍 -->
-    <section id="services" class="py-20 bg-light">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <!-- <span class="text-primary font-medium">我们的服务</span> -->
-                <h2 class="text-[clamp(2rem,4vw,3rem)] font-bold mt-2 mb-4">创新自动化技术解决方案</h2>
-                <p class="text-muted max-w-2xl mx-auto">
-                    我们提供全方位的自动化技术服务，从研发到商业化，助力客户实现工程业务增长。</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-white rounded-xl overflow-hidden shadow-card hover:shadow-card-hover transition-all transform hover:-translate-y-2 group">
-                    <div class="h-48 overflow-hidden">
-                        <img src="https://picsum.photos/id/160/600/400" alt="3C行业服务"
-                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                <div class="mt-20 flex flex-col md:flex-row items-center gap-12">
+                    <div class="w-full md:w-1/2 animate-slide-left">
+                        <img src="https://picsum.photos/id/20/800/600" alt="公司团队合影"
+                             class="rounded-2xl shadow-lg w-full h-auto" />
                     </div>
-                    <div class="p-8">
-                        <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
-                            <i class="fa fa-laptop text-xl text-primary"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-4">3C行业</h3>
-                        <p class="text-muted mb-6">我们提供3C行业的自动化技术服务，未来 3C
-                            行业的竞争不只是速度，而是智能。选择我们，让设计领先一小步，市场领先一大步。</p>
-                        <!--                            TODO-->
-                        <a href="/service?id=3C" class="text-primary font-medium flex items-center">
-                            了解更多 <i
-                                class="fa fa-arrow-right ml-2 transition-transform duration-300 group-hover:translate-x-1"></i>
-                        </a>
-                    </div>
-                </div>
 
-                <div class="bg-white rounded-xl overflow-hidden shadow-card hover:shadow-card-hover transition-all transform hover:-translate-y-2 group">
-                    <div class="h-48 overflow-hidden">
-                        <img src="../static/picture/new.webp" alt="新能源服务"
-                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                    </div>
-                    <div class="p-8">
-                        <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
-                            <i class="fa fa-battery-full text-xl text-primary"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-4">新能源</h3>
-                        <p class="text-muted mb-6">新能源汽车、锂电、光伏、储能、风电、氢能等。</p>
-                        <!--                            TODO-->
-                        <a href="/service?id=New_Energy_Services" class="text-primary font-medium flex items-center">
-                            了解更多 <i
-                                class="fa fa-arrow-right ml-2 transition-transform duration-300 group-hover:translate-x-1"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-xl overflow-hidden shadow-card hover:shadow-card-hover transition-all transform hover:-translate-y-2 group">
-                    <div class="h-48 overflow-hidden">
-                        <img src="../static/picture/car.webp" alt="汽车行业"
-                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                    </div>
-                    <div class="p-8">
-                        <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
-                            <i class="fa fa-car text-xl text-primary"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-4">汽车行业</h3>
-                        <p class="text-muted mb-6">动力总成、白车身、零部件、汽车电子等。</p>
-                        <!--                            TODO-->
-                        <a href="/service?id=automotive_automation" class="text-primary font-medium flex items-center">
-                            了解更多 <i
-                                class="fa fa-arrow-right ml-2 transition-transform duration-300 group-hover:translate-x-1"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-xl overflow-hidden shadow-card hover:shadow-card-hover transition-all transform hover:-translate-y-2 group">
-                    <div class="h-48 overflow-hidden">
-                        <img src="../static/picture/chip.webp" alt="半导体行业"
-                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                    </div>
-                    <div class="p-8">
-                        <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
-                            <i class="fa fa-microchip text-xl text-primary"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-4">半导体</h3>
-                        <p class="text-muted mb-6">集成电路、PLC控制器、工控MCU。</p>
-                        <!--                            TODO-->
-                        <a href="/service?id=semiconductor_automation" class="text-primary font-medium flex items-center">
-                            了解更多 <i
-                                class="fa fa-arrow-right ml-2 transition-transform duration-300 group-hover:translate-x-1"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-xl overflow-hidden shadow-card hover:shadow-card-hover transition-all transform hover:-translate-y-2 group">
-                    <div class="h-48 overflow-hidden">
-                        <img src="../static/picture/MedicalDevices.webp" alt="医疗设备"
-                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                    </div>
-                    <div class="p-8">
-                        <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
-                            <i class="fa fa-wheelchair text-xl text-primary"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-4">医疗设备</h3>
-                        <p class="text-muted mb-6">设计高精度的医疗设备，助力医疗的发展。</p>
-                        <!--                            TODO-->
-                        <a href="/service?id=medical_equipment_automation" class="text-primary font-medium flex items-center">
-                            了解更多 <i
-                                class="fa fa-arrow-right ml-2 transition-transform duration-300 group-hover:translate-x-1"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-xl overflow-hidden shadow-card hover:shadow-card-hover transition-all transform hover:-translate-y-2 group">
-                    <div class="h-48 overflow-hidden">
-                        <img src="../static/picture/ChemicalEquipment.webp" alt="化工"
-                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                    </div>
-                    <div class="p-8">
-                        <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
-                            <i class="fa fa-flask text-xl text-primary"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-4">化工</h3>
-                        <p class="text-muted mb-6">提供化自动化化工的生产线的解决方案。</p>
-                        <!--                            TODO-->
-                        <a href="/service?id=chemical_automation" class="text-primary font-medium flex items-center">
-                            了解更多 <i
-                                class="fa fa-arrow-right ml-2 transition-transform duration-300 group-hover:translate-x-1"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 案例 -->
-    <!--        TODO-->
-    <section id="case-studies" class="py-20 bg-white">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-[clamp(2rem,4vw,3rem)] font-bold mt-2 mb-4">成功项目展示</h2>
-                <p class="text-muted max-w-2xl mx-auto">
-                    探索我们如何通过自动化科技技术解决方案帮助客户解决复杂问题并取得突破性成果。</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-white rounded-xl overflow-hidden shadow-card hover:shadow-card-hover transition-all transform hover:-translate-y-2 group">
-                    <div class="relative h-64 overflow-hidden">
-                        <img src="../static/case/casePicture/picture6.webp" alt="全自动智能装配线"
-                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                        <div class="absolute top-4 left-4 bg-primary text-white text-sm font-medium px-3 py-1 rounded-full">
-                            全自动智能装配线
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-3">全自动智能装配线</h3>
-                        <p class="text-muted mb-4">自动装配线是一种专门用于快速、高效组装零部件的生产线。该装配线整合了工业机器人、高精度传感器及机器视觉系统，实现精准的组件组装、锁附、贴标和码垛。通过模块化设计，装配线能够灵活适应不同型号和配置的服务器生产需求。</p>
-                        <!-- <a href="#" class="text-primary font-medium flex items-center">
-                            阅读详情 <i class="fa fa-arrow-right ml-2 transition-transform duration-300 group-hover:translate-x-1"></i>
-                        </a> -->
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-xl overflow-hidden shadow-card hover:shadow-card-hover transition-all transform hover:-translate-y-2 group">
-                    <div class="relative h-64 overflow-hidden">
-                        <img src="../static/case/casePicture/picture7.webp" alt="电机类智能装配线"
-                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                        <div class="absolute top-4 left-4 bg-secondary text-white text-sm font-medium px-3 py-1 rounded-full">
-                            电机类智能装配线
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-3">电机类智能装配线</h3>
-                        <p class="text-muted mb-4">
-                            以智能化生产，全自动智能装配线集成中频加热、自动打标、机械臂、压装、检测、分拣及供料系统。通过精准控制和实时监控，确保了产品质量的稳定性和一致性，推动了制造业的智能化升级。</p>
-                        <!-- <a href="#" class="text-primary font-medium flex items-center">
-                            阅读详情 <i
-                                class="fa fa-arrow-right ml-2 transition-transform duration-300 group-hover:translate-x-1"></i>
-                        </a> -->
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-xl overflow-hidden shadow-card hover:shadow-card-hover transition-all transform hover:-translate-y-2 group">
-                    <div class="relative h-64 overflow-hidden">
-                        <img src="../static/case/casePicture/picture8.webp" alt="凸轮式自动装配机"
-                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                        <div class="absolute top-4 left-4 bg-green-500 text-white text-sm font-medium px-3 py-1 rounded-full">
-                            凸轮式自动装配机
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-3">凸轮式自动装配机</h3>
-                        <p class="text-muted mb-4">
-                           凸轮式自动装配机运用凸轮机构、双供料系统、加热装置与压套装配机构，化解人工装配难题，助力日化、电子、半导体、汽车等行业提质增效。</p>
-                        <!-- <a href="#" class="text-primary font-medium flex items-center">
-                            阅读详情 <i
-                                class="fa fa-arrow-right ml-2 transition-transform duration-300 group-hover:translate-x-1"></i>
-                        </a> -->
-                    </div>
-                </div>
-            </div>
-
-            <div class="text-center mt-12">
-                <a href="/cases"
-                   class="inline-block bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-lg transition-all transform hover:scale-105">
-                    查看更多案例
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- 客户评价 -->
-    <section id="testimonials" class="py-20 bg-primary/5">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <!-- <span class="text-primary font-medium">合作客户</span> -->
-                <h2 class="text-[clamp(2rem,4vw,3rem)] font-bold mt-2 mb-4">合作伙伴</h2>
-                <!-- <p class="text-muted max-w-2xl mx-auto">
-                    主要客户集中在国内的企业，包括汽车、电子、通信、医疗等多个行业。</p> -->
-            </div>
-
-            <!-- 外层容器：水平居中 -->
-            <div class="flex justify-center">
-                <!-- 网格容器：保持原有列数与间距，并令子元素居中 -->
-                <div class="grid grid-cols-3 gap-8 items-center justify-items-center">
-                    <img src="../static/picture/companyLogo/1.webp" alt="ruhlamat" loading="lazy" class="h-28 object-contain">
-                    <img src="../static/picture/companyLogo/2.webp" alt="Bosch" loading="lazy" class="h-28 object-contain">
-                    <img src="../static/picture/companyLogo/5.webp" alt="COWAIN 科瑞恩" loading="lazy" class="h-28 object-contain">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 联系我们 -->
-    <section id="contact" class="py-20 bg-white">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <!-- <span class="text-primary font-medium">联系我们</span> -->
-                <h2 class="text-[clamp(2rem,4vw,3rem)] font-bold mt-2 mb-4">与我们取得联系</h2>
-                <p class="text-muted max-w-2xl mx-auto">
-                    无论您是对我们的服务感兴趣，还是有合作机会，或者只是想了解更多关于LINTRONIX的信息，我们都很乐意听取您的意见。</p>
-            </div>
-
-            <div class="flex flex-col lg:flex-row gap-12">
-                <div class="w-full lg:w-1/2">
-                    <div class="bg-light rounded-xl p-8 shadow-card">
-                        <h3 class="text-2xl font-bold mb-6">发送消息</h3>
-
-                        <form action="/contact" method="post" id="contactForm">
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
-                                <div class="form-group">
-                                    <label for="name" class="block text-sm font-medium text-muted mb-2">姓名</label>
-                                    <input type="text" id="name" name="name" required
-                                           class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors">
-                                    <div class="error-message hidden text-red-500 text-xs mt-1">不能为空</div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="email" class="block text-sm font-medium text-muted mb-2">邮箱</label>
-                                    <input type="email" id="email" name="email" required
-                                           class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors">
-                                    <div class="error-message hidden text-red-500 text-xs mt-1">不能为空</div>
-                                    <div class="email-format-error hidden text-red-500 text-xs mt-1">
-                                        请输入有效的邮箱地址
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="mb-6">
-                                <div class="form-group">
-                                    <label for="subject" class="block text-sm font-medium text-muted mb-2">主题</label>
-                                    <input type="text" id="subject" name="subject" required
-                                           class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors">
-                                    <div class="error-message hidden text-red-500 text-xs mt-1">不能为空</div>
-                                </div>
-                            </div>
-
-                            <div class="mb-6">
-                                <div class="form-group">
-                                    <label for="message"
-                                           class="block text-sm font-medium text-muted mb-2">消息内容</label>
-                                    <textarea id="message" name="message" rows="5" required
-                                              class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors"></textarea>
-                                    <div class="error-message hidden text-red-500 text-xs mt-1">不能为空</div>
-                                </div>
-                            </div>
-
-                            <button type="submit"
-                                    class="w-full bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-lg transition-all transform hover:scale-105">
-                                发送消息
-                            </button>
-                        </form>
-                    </div>
-                </div>
-
-                <div class="w-full lg:w-1/2">
-                    <div class="bg-light rounded-xl p-8 shadow-card mb-8">
-                        <h3 class="text-2xl font-bold mb-6">联系方式</h3>
+                    <div class="w-full md:w-1/2 animate-slide-right">
+                        <span class="text-primary font-medium">公司愿景</span>
+                        <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold mt-2 mb-6">成长蓝图</h2>
+                        <p class="text-muted mb-6">
+                            Lintronix 成立于 2025 年，专注于智能自动化科技创新。我们秉持务实与探索精神，计划在未来逐步实现以下里程碑。
+                        </p>
 
                         <div class="space-y-6">
-                            <div class="flex items-start">
-                                <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary flex-shrink-0">
-                                    <i class="fa fa-map-marker"></i>
+                            <div class="flex">
+                                <div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                                    <i class="fa fa-flag"></i>
                                 </div>
                                 <div class="ml-4">
-                                    <h4 class="font-bold mb-1">地址</h4>
-                                    <p class="text-muted">上海市浦东新区</p>
+                                    <h4 class="text-lg font-semibold">公司成立</h4>
+                                    <p class="text-muted">在上海组建核心技术团队，自动化科技工作站的建立。</p>
                                 </div>
                             </div>
 
-                            <div class="flex items-start">
-                                <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary flex-shrink-0">
-                                    <i class="fa fa-phone"></i>
-                                </div>
-                                <div class="ml-4">
-                                    <h4 class="font-bold mb-1">电话</h4>
-                                    <p class="text-muted">13918704690</p>
-                                </div>
-                            </div>
-
-                            <div class="flex items-start">
-                                <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary flex-shrink-0">
-                                    <i class="fa fa-envelope"></i>
+                            <div class="flex">
+                                <div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                                    <i class="fa fa-rocket"></i>
                                 </div>
                                 <div class="ml-4">
-                                    <h4 class="font-bold mb-1">邮箱</h4>
-                                    <p class="text-muted">lintronix@163.com</p>
+                                    <h4 class="text-lg font-semibold">打开市场</h4>
+                                    <p class="text-muted">成为国内顶尖自动化科技机构。</p>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="mt-8">
-                            <h4 class="font-bold mb-4">关注我们</h4>
-                            <div class="flex space-x-4">
-                                <a href="#"
-                                   class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors">
-                                    <i class="fa fa-facebook"></i>
-                                </a>
-                                <a href="#"
-                                   class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors">
-                                    <i class="fa fa-twitter"></i>
-                                </a>
-                                <a href="#"
-                                   class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors">
-                                    <i class="fa fa-linkedin"></i>
-                                </a>
-                                <a href="#"
-                                   class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors">
-                                    <i class="fa fa-instagram"></i>
-                                </a>
+                            <div class="flex">
+                                <div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                                    <i class="fa fa-globe"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-semibold">国际合作</h4>
+                                    <p class="text-muted">与欧美领先自动化中心建立联合，开启全球市场布局。</p>
+                                </div>
                             </div>
-                        </div>
-                    </div>
 
-                    <div class="bg-light rounded-xl p-8 shadow-card">
-                        <h3 class="text-2xl font-bold mb-6">工作时间</h3>
-
-                        <div class="space-y-4">
-                            <div class="flex justify-between">
-                                <span class="text-muted">周一至周五</span>
-                                <span class="font-medium">9:00 AM - 6:00 PM</span>
-                            </div>
-                            <div class="flex justify-between">
-                                <span class="text-muted">周六</span>
-                                <span class="font-medium">10:00 AM - 4:00 PM</span>
-                            </div>
-                            <div class="flex justify-between">
-                                <span class="text-muted">周日</span>
-                                <span class="font-medium">休息</span>
+                            <div class="flex">
+                                <div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                                    <i class="fa fa-trophy"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-semibold">行业引领</h4>
+                                    <p class="text-muted">成为全球自动化领域领导者，服务覆盖 50+ 国家。</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </section>
+
+        <section id="services" class="py-20 bg-light">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16 animate-fade-in">
+                    <h2 class="text-[clamp(2rem,4vw,3rem)] font-bold mt-2 mb-4">创新自动化技术解决方案</h2>
+                    <p class="text-muted max-w-2xl mx-auto">
+                        我们提供全方位的自动化技术服务，从研发到商业化，助力客户实现工程业务增长。</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 group animate-fade-in" data-service-card>
+                        <div class="relative h-52 overflow-hidden">
+                            <img src="https://picsum.photos/id/160/600/400" alt="3C行业服务"
+                                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-115" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        </div>
+                        <div class="p-8 relative">
+                            <div class="absolute -top-6 left-8 w-14 h-14 bg-gradient-to-br from-primary to-purple-500 rounded-xl flex items-center justify-center shadow-lg animate-icon-bounce group-hover:scale-110 transition-transform">
+                                <i class="fa fa-laptop text-xl text-white"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-4 mt-4">3C行业</h3>
+                            <p class="text-muted mb-6">我们提供3C行业的自动化技术服务，未来3C行业的竞争不只是速度，而是智能。选择我们，让设计领先一小步，市场领先一大步。</p>
+                            <a href="/service?id=3C" class="inline-flex items-center gap-2 text-primary font-medium group/link">
+                                了解更多 
+                                <span class="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center transition-all group-hover/link:bg-primary group-hover/link:text-white">
+                                    <i class="fa fa-arrow-right text-sm"></i>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 group animate-fade-in" data-service-card>
+                        <div class="relative h-52 overflow-hidden">
+                            <img src="/static/picture/new.webp" alt="新能源服务"
+                                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-115" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        </div>
+                        <div class="p-8 relative">
+                            <div class="absolute -top-6 left-8 w-14 h-14 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center shadow-lg animate-icon-bounce group-hover:scale-110 transition-transform">
+                                <i class="fa fa-battery-full text-xl text-white"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-4 mt-4">新能源</h3>
+                            <p class="text-muted mb-6">新能源汽车、锂电、光伏、储能、风电、氢能等领域的自动化解决方案。</p>
+                            <a href="/service?id=New_Energy_Services" class="inline-flex items-center gap-2 text-primary font-medium group/link">
+                                了解更多 
+                                <span class="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center transition-all group-hover/link:bg-primary group-hover/link:text-white">
+                                    <i class="fa fa-arrow-right text-sm"></i>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 group animate-fade-in" data-service-card>
+                        <div class="relative h-52 overflow-hidden">
+                            <img src="/static/picture/car.webp" alt="汽车行业"
+                                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-115" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        </div>
+                        <div class="p-8 relative">
+                            <div class="absolute -top-6 left-8 w-14 h-14 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center shadow-lg animate-icon-bounce group-hover:scale-110 transition-transform">
+                                <i class="fa fa-car text-xl text-white"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-4 mt-4">汽车行业</h3>
+                            <p class="text-muted mb-6">动力总成、白车身、零部件、汽车电子等全产业链自动化解决方案。</p>
+                            <a href="/service?id=automotive_automation" class="inline-flex items-center gap-2 text-primary font-medium group/link">
+                                了解更多 
+                                <span class="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center transition-all group-hover/link:bg-primary group-hover/link:text-white">
+                                    <i class="fa fa-arrow-right text-sm"></i>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 group animate-fade-in" data-service-card>
+                        <div class="relative h-52 overflow-hidden">
+                            <img src="/static/picture/chip.webp" alt="半导体行业"
+                                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-115" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        </div>
+                        <div class="p-8 relative">
+                            <div class="absolute -top-6 left-8 w-14 h-14 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg animate-icon-bounce group-hover:scale-110 transition-transform">
+                                <i class="fa fa-microchip text-xl text-white"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-4 mt-4">半导体</h3>
+                            <p class="text-muted mb-6">集成电路、PLC控制器、工控MCU等半导体设备自动化解决方案。</p>
+                            <a href="/service?id=semiconductor_automation" class="inline-flex items-center gap-2 text-primary font-medium group/link">
+                                了解更多 
+                                <span class="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center transition-all group-hover/link:bg-primary group-hover/link:text-white">
+                                    <i class="fa fa-arrow-right text-sm"></i>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 group animate-fade-in" data-service-card>
+                        <div class="relative h-52 overflow-hidden">
+                            <img src="/static/picture/MedicalDevices.webp" alt="医疗设备"
+                                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-115" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        </div>
+                        <div class="p-8 relative">
+                            <div class="absolute -top-6 left-8 w-14 h-14 bg-gradient-to-br from-pink-500 to-rose-600 rounded-xl flex items-center justify-center shadow-lg animate-icon-bounce group-hover:scale-110 transition-transform">
+                                <i class="fa fa-heart-pulse text-xl text-white"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-4 mt-4">医疗设备</h3>
+                            <p class="text-muted mb-6">设计高精度的医疗设备自动化生产线，助力医疗行业智能化发展。</p>
+                            <a href="/service?id=medical_equipment_automation" class="inline-flex items-center gap-2 text-primary font-medium group/link">
+                                了解更多 
+                                <span class="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center transition-all group-hover/link:bg-primary group-hover/link:text-white">
+                                    <i class="fa fa-arrow-right text-sm"></i>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 group animate-fade-in" data-service-card>
+                        <div class="relative h-52 overflow-hidden">
+                            <img src="/static/picture/ChemicalEquipment.webp" alt="化工"
+                                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-115" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        </div>
+                        <div class="p-8 relative">
+                            <div class="absolute -top-6 left-8 w-14 h-14 bg-gradient-to-br from-orange-500 to-amber-600 rounded-xl flex items-center justify-center shadow-lg animate-icon-bounce group-hover:scale-110 transition-transform">
+                                <i class="fa fa-flask text-xl text-white"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-4 mt-4">化工</h3>
+                            <p class="text-muted mb-6">提供自动化化工生产线解决方案，实现安全生产与高效运营。</p>
+                            <a href="/service?id=chemical_automation" class="inline-flex items-center gap-2 text-primary font-medium group/link">
+                                了解更多 
+                                <span class="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center transition-all group-hover/link:bg-primary group-hover/link:text-white">
+                                    <i class="fa fa-arrow-right text-sm"></i>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="case-studies" class="py-20 bg-gradient-to-b from-white to-light">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16 animate-fade-in">
+                    <span class="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-4">案例展示</span>
+                    <h2 class="text-[clamp(2rem,4vw,3rem)] font-bold mt-2 mb-4">成功项目展示</h2>
+                    <p class="text-muted max-w-2xl mx-auto">
+                        探索我们如何通过自动化科技技术解决方案帮助客户解决复杂问题并取得突破性成果。</p>
+                </div>
+
+                <div class="flex flex-wrap justify-center gap-4 mb-12">
+                    <button class="case-filter active px-6 py-2 bg-primary text-white rounded-full text-sm font-medium transition-all hover:shadow-lg">全部</button>
+                    <button class="case-filter px-6 py-2 bg-white text-dark rounded-full text-sm font-medium transition-all hover:bg-primary/10 hover:text-primary">智能装配</button>
+                    <button class="case-filter px-6 py-2 bg-white text-dark rounded-full text-sm font-medium transition-all hover:bg-primary/10 hover:text-primary">自动化设备</button>
+                    <button class="case-filter px-6 py-2 bg-white text-dark rounded-full text-sm font-medium transition-all hover:bg-primary/10 hover:text-primary">智能制造</button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 animate-fade-in" data-case-card>
+                        <div class="relative h-64 overflow-hidden">
+                            <img src="/static/case/casePicture/picture6.webp" alt="全自动智能装配线"
+                                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-115" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <div class="absolute top-4 left-4">
+                                <span class="px-3 py-1 bg-primary text-white text-sm font-medium rounded-full">智能装配</span>
+                            </div>
+                            <div class="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-4 group-hover:translate-y-0">
+                                <a href="#" class="inline-flex items-center gap-2 bg-white/90 text-primary px-4 py-2 rounded-full text-sm font-medium hover:bg-white transition-colors">
+                                    <i class="fa fa-eye"></i> 查看详情
+                                </a>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-3">
+                                <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                                <span class="text-xs text-muted">已交付</span>
+                            </div>
+                            <h3 class="text-xl font-bold mb-3">全自动智能装配线</h3>
+                            <p class="text-muted text-sm line-clamp-2">自动装配线整合了工业机器人、高精度传感器及机器视觉系统，实现精准的组件组装、锁附、贴标和码垛。</p>
+                            <div class="flex items-center justify-between mt-4 pt-4 border-t border-gray-100">
+                                <span class="text-xs text-muted">客户案例</span>
+                                <span class="text-sm font-medium text-primary">了解更多</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 animate-fade-in" data-case-card>
+                        <div class="relative h-64 overflow-hidden">
+                            <img src="/static/case/casePicture/picture7.webp" alt="电机类智能装配线"
+                                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-115" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <div class="absolute top-4 left-4">
+                                <span class="px-3 py-1 bg-secondary text-white text-sm font-medium rounded-full">自动化设备</span>
+                            </div>
+                            <div class="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-4 group-hover:translate-y-0">
+                                <a href="#" class="inline-flex items-center gap-2 bg-white/90 text-primary px-4 py-2 rounded-full text-sm font-medium hover:bg-white transition-colors">
+                                    <i class="fa fa-eye"></i> 查看详情
+                                </a>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-3">
+                                <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                                <span class="text-xs text-muted">已交付</span>
+                            </div>
+                            <h3 class="text-xl font-bold mb-3">电机类智能装配线</h3>
+                            <p class="text-muted text-sm line-clamp-2">集成中频加热、自动打标、机械臂、压装、检测、分拣及供料系统，确保产品质量稳定一致。</p>
+                            <div class="flex items-center justify-between mt-4 pt-4 border-t border-gray-100">
+                                <span class="text-xs text-muted">客户案例</span>
+                                <span class="text-sm font-medium text-primary">了解更多</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 animate-fade-in" data-case-card>
+                        <div class="relative h-64 overflow-hidden">
+                            <img src="/static/case/casePicture/picture8.webp" alt="凸轮式自动装配机"
+                                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-115" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <div class="absolute top-4 left-4">
+                                <span class="px-3 py-1 bg-green-500 text-white text-sm font-medium rounded-full">智能制造</span>
+                            </div>
+                            <div class="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-4 group-hover:translate-y-0">
+                                <a href="#" class="inline-flex items-center gap-2 bg-white/90 text-primary px-4 py-2 rounded-full text-sm font-medium hover:bg-white transition-colors">
+                                    <i class="fa fa-eye"></i> 查看详情
+                                </a>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-3">
+                                <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                                <span class="text-xs text-muted">已交付</span>
+                            </div>
+                            <h3 class="text-xl font-bold mb-3">凸轮式自动装配机</h3>
+                            <p class="text-muted text-sm line-clamp-2">运用凸轮机构、双供料系统、加热装置与压套装配机构，化解人工装配难题。</p>
+                            <div class="flex items-center justify-between mt-4 pt-4 border-t border-gray-100">
+                                <span class="text-xs text-muted">客户案例</span>
+                                <span class="text-sm font-medium text-primary">了解更多</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-12">
+                    <a href="/cases"
+                       class="inline-block bg-gradient-to-r from-primary to-purple-600 hover:from-primary/90 hover:to-purple-500 text-white px-8 py-4 rounded-xl transition-all transform hover:scale-105 shadow-lg hover:shadow-xl">
+                        查看更多案例
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="py-20 bg-primary/5">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16 animate-fade-in">
+                    <h2 class="text-[clamp(2rem,4vw,3rem)] font-bold mt-2 mb-4">合作伙伴</h2>
+                </div>
+
+                <div class="flex justify-center">
+                    <div class="grid grid-cols-3 gap-8 items-center justify-items-center">
+                        <img src="/static/picture/companyLogo/1.webp" alt="ruhlamat" loading="lazy" class="h-28 object-contain grayscale hover:grayscale-0 transition-all duration-300" />
+                        <img src="/static/picture/companyLogo/2.webp" alt="Bosch" loading="lazy" class="h-28 object-contain grayscale hover:grayscale-0 transition-all duration-300" />
+                        <img src="/static/picture/companyLogo/5.webp" alt="COWAIN 科瑞恩" loading="lazy" class="h-28 object-contain grayscale hover:grayscale-0 transition-all duration-300" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        {{ template "contact-form.html" }}
+    </main>
+
+    <div id="messageModal" class="fixed inset-0 z-50 hidden bg-black/50" aria-modal="true" role="dialog">
+        <div class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white rounded-lg p-8 shadow-xl max-w-md w-full mx-4 animate-fade-in">
+            <div id="modalContent" class="text-center mb-4"></div>
+            <button id="closeModal"
+                    class="w-full bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg transition-colors"
+                    aria-label="关闭弹窗">
+                关闭
+            </button>
         </div>
-    </section>
-</main>
-<!-- 消息反馈模态框 -->
-<div id="messageModal" class="fixed inset-0 z-50 hidden bg-black/50">
-    <div class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white rounded-lg p-8 shadow-xl max-w-md w-full">
-        <div id="modalContent" class="text-center mb-4"></div>
-        <button id="closeModal"
-                class="w-full bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg transition-colors">
-            关闭
-        </button>
     </div>
-</div>
-<!-- 页脚 -->
-<footer class="bg-dark text-white pt-16 pb-8">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-            <div>
-                <div class="flex items-center mb-6">
-                    <div class="w-36 h-10 rounded-lg bg-white flex items-center justify-center text-primary">
-                        <img src="../static/picture/logonew.webp" alt="logo" loading="lazy" class="h-10 w-36 rounded-full">
-                    </div>
-                </div>
-                <p class="text-gray-400 mb-6">
-                    我们致力于通过自动化技术改善人类的生活质量，让智能科技赋能万物，构建高效、可持续的未来世界。
-                </p>
-                <div class="flex space-x-4">
-                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
-                        <i class="fa fa-facebook"></i>
-                    </a>
-                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
-                        <i class="fa fa-twitter"></i>
-                    </a>
-                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
-                        <i class="fa fa-linkedin"></i>
-                    </a>
-                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
-                        <i class="fa fa-instagram"></i>
-                    </a>
-                </div>
-            </div>
 
-            <div>
-                <h4 class="text-lg font-bold mb-6">快速链接</h4>
-                <ul class="space-y-4">
-                    <li><a href="#" class="text-gray-400 hover:text-white transition-colors">首页</a></li>
-                    <li><a href="#about" class="text-gray-400 hover:text-white transition-colors">关于我们</a></li>
-                    <li><a href="#services" class="text-gray-400 hover:text-white transition-colors">服务</a></li>
-                    <li><a href="#testimonials" class="text-gray-400 hover:text-white transition-colors">合作客户</a>
-                    </li>
-                    <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors">联系我们</a></li>
-                </ul>
-            </div>
+    {{ template "footer.html" }}
 
-            <div>
-                <h4 class="text-lg font-bold mb-6">服务</h4>
-                <ul class="space-y-4">
-                    <li><a href="#" class="text-gray-400 hover:text-white transition-colors">3C行业</a></li>
-                    <li><a href="#" class="text-gray-400 hover:text-white transition-colors">新能源</a></li>
-                    <li><a href="#" class="text-gray-400 hover:text-white transition-colors">汽车行业</a></li>
-                    <li><a href="#" class="text-gray-400 hover:text-white transition-colors">半导体</a></li>
-                    <li><a href="#" class="text-gray-400 hover:text-white transition-colors">医疗设备</a></li>
-                    <li><a href="#" class="text-gray-400 hover:text-white transition-colors">化工</a></li>
-                </ul>
-            </div>
-
-            <div>
-                <h4 class="text-lg font-bold mb-6">订阅我们</h4>
-                <p class="text-gray-400 mb-6">
-                    订阅我们的通讯，了解最新的自动化技术发展和公司动态。
-                </p>
-                <form action="/subscribe" method="POST">
-                    <div class="flex">
-                        <label>
-                            <input type="email" name="Email" placeholder="您的邮箱地址"
-                                   class="px-4 py-3 rounded-l-lg w-full focus:outline-none bg-gray-800 text-white border border-gray-700">
-                        </label>
-                        <button type="submit"
-                                class="bg-primary hover:bg-primary/90 text-white px-4 py-3 rounded-r-lg transition-colors">
-                            <i class="fa fa-paper-plane"></i>
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </div>
-
-        <div class="border-t border-gray-800 pt-8">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <p class="text-gray-400 mb-4 md:mb-0">
-                    &copy; 2025 LINTRONIX. 保留所有权利。
-                </p>
-                <div class="flex space-x-6">
-                    <a href="#" class="text-gray-400 hover:text-white transition-colors">隐私政策</a>
-                    <a href="#" class="text-gray-400 hover:text-white transition-colors">服务条款</a>
-                    <a href="#" class="text-gray-400 hover:text-white transition-colors">Cookie政策</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
-<script>
-
-    // 增加全局时间，防止同一ip频繁提交
-    //     // 导航栏滚动效果
-    const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar.classList.add('bg-glass', 'shadow-md');
-        } else {
-            navbar.classList.remove('bg-glass', 'shadow-md');
-        }
-    });
-
-    // 移动端菜单切换
-    const menuToggle = document.getElementById('menu-toggle');
-    const mobileMenu = document.getElementById('mobile-menu');
-    menuToggle.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-    });
-
-    // 平滑滚动
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
-
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                window.scrollTo({
-                    top: targetElement.offsetTop - 80,
-                    behavior: 'smooth'
-                });
-
-                // 关闭移动菜单
-                if (!mobileMenu.classList.contains('hidden')) {
-                    mobileMenu.classList.add('hidden');
-                }
-            }
-        });
-    });
-    // 表单提交处理
-    const form = document.querySelector('form[action="/contact"]');
-    form.addEventListener('submit', async (e) => {
-        e.preventDefault(); // 阻止默认提交
-
-        const submitButton = form.querySelector('button[type="submit"]');
-        submitButton.disabled = true;
-        submitButton.textContent = "提交中...";
-
-        try {
-            const response = await fetch(form.action, {
-                method: form.method,
-                body: new FormData(form),
-            });
-            // 展示不同的错误内容
-            if (response.ok) {
-                showModal('提交成功', '消息已成功发送，我们会尽快回复！', 'success', resetForm);
-            } else if (response.status === 409) {
-                const data = await response.json();
-                showModal("提交成功", "消息已经提交过了！", 'success', resetForm)
-            } else {
-                const data = await response.json();
-                showModal('提交失败', data.message || '请检查输入内容!', 'error', resetForm);
-            }
-        } catch (error) {
-            showModal('网络错误', '请检查网络连接后重试!', 'error', resetForm);
-        }
-    });
-
-    // 新增重置表单的函数
-    function resetForm() {
-        const form = document.querySelector('form[action="/contact"]');
-        const submitButton = form.querySelector('button[type="submit"]');
-
-        form.reset();
-        submitButton.disabled = false;
-        submitButton.textContent = "发送消息";
-    }
-
-    // 订阅表单处理
-    const subscribeForm = document.querySelector('form[action="/subscribe"]');
-    subscribeForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const submitButton = form.querySelector('button[type="submit"]');
-        submitButton.disabled = true;
-        try {
-            const response = await fetch(subscribeForm.action, {
-                method: subscribeForm.method,
-                body: new FormData(subscribeForm),
-            });
-            if (response.ok) {
-                showModal("订阅成功", "恭喜老板订阅成功!", "success", resetSubscribeForm);
-            } else if (response.status === 409) {
-                const data = await response.json();
-                showModal("订阅成功", "老板已经订阅过了。", "success", resetSubscribeForm);
-            } else {
-                const data = await response.json();
-                showModal("订阅失败", "是我们照顾不周了!", "error", resetSubscribeForm);
-            }
-        } catch (error) {
-            showModal('网络错误', '请检查网络连接后重试', 'error', resetSubscribeForm);
-        }
-    });
-
-    function resetSubscribeForm() {
-        const form = document.querySelector('form[action="/subscribe"]');
-        const submitButton = form.querySelector('button[type="submit"]');
-
-        form.reset();
-        submitButton.disabled = false;
-    }
-
-
-    // 修改showModal函数，支持传入回调
-    function showModal(title, message, type, callback) {
-        const modal = document.getElementById('messageModal');
-        const content = document.getElementById('modalContent');
-
-        content.innerHTML = `
-    <h3 class="text-lg font-bold mb-2 ${type === 'success' ? 'text-green-600' : 'text-red-600'}">
-      ${title}
-    </h3>
-    <p class="text-muted">${message}</p>
-  `;
-
-        modal.classList.remove('hidden');
-
-        // 关闭模态框时执行回调
-        const closeModal = () => {
-            modal.classList.add('hidden');
-            if (typeof callback === 'function') {
-                callback();
-            }
-            // 移除事件监听器，避免重复绑定
-            document.getElementById('closeModal').removeEventListener('click', closeModal);
-            modal.removeEventListener('click', closeModal);
-        };
-
-        document.getElementById('closeModal').addEventListener('click', closeModal);
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                closeModal();
-            }
-        });
-    }
-
-    // 获取表单和所有必填字段
-    const contactForm = document.getElementById('contactForm');
-    const requiredFields = contactForm.querySelectorAll('input[required], textarea[required]');
-    const emailField = contactForm.querySelector('input[type="email"]');
-    const emailFormatError = contactForm.querySelector('.email-format-error');
-    
-    // 字段验证函数
-    function validateField(field) {
-        const value = field.value.trim();
-        const errorElement = field.parentElement.querySelector('.error-message');
-
-        if (!value) {
-            showError(field, errorElement);
-            return false;
-        } else {
-            hideError(field, errorElement);
-            return true;
-        }
-    }
-
-    // 邮箱格式验证
-    function validateEmailFormat(email) {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return emailRegex.test(email);
-    }
-
-    // 显示错误提示
-    function showError(field, errorElement) {
-        field.classList.add('border-red-500');
-        errorElement.classList.remove('hidden');
-    }
-
-    // 隐藏错误提示
-    function hideError(field, errorElement) {
-        field.classList.remove('border-red-500');
-        errorElement.classList.add('hidden');
-    }
-
-    // 字段失去焦点时验证
-    requiredFields.forEach(field => {
-        field.addEventListener('blur', () => {
-            validateField(field);
-        });
-
-        // 字段聚焦时隐藏错误提示
-        field.addEventListener('focus', () => {
-            const errorElement = field.parentElement.querySelector('.error-message');
-            hideError(field, errorElement);
-
-            // 特殊处理邮箱格式错误
-            if (field.type === 'email') {
-                emailFormatError.classList.add('hidden');
-            }
-        });
-    });
-
-    // 邮箱格式实时验证
-    if (emailField) {
-        emailField.addEventListener('input', () => {
-            if (emailField.value.trim()) {
-                emailFormatError.classList.add('hidden');
-            }
-        });
-    }
-</script>
+    <script src="/static/js/main.js" defer></script>
 </body>
 </html>
