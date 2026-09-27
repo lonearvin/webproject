@@ -1,0 +1,21 @@
+# 版本控制
+.git
+.gitignore
+
+# 本地构建产物（23MB 旧二进制）
+webproject
+main
+
+# 依赖目录（容器内重新安装）
+node_modules
+
+# 文档与脚本
+*.md
+deploy.sh
+gitcommond.sh
+optimize_images.sh
+start.sh
+
+# 日志与系统文件
+log
+.DS_Store

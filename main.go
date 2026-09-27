@@ -1,6 +1,7 @@
 package main
 
 import (
+	"log"
 	"webproject/config"
 	"webproject/router"
 
@@ -23,8 +24,7 @@ func main() {
 		config.AppConfig.App.Port = "8080"
 	}
 	r := router.SetRouter()
-	err := r.Run(config.AppConfig.App.Port)
-	if err != nil {
-		return
+	if err := r.Run(config.AppConfig.App.Port); err != nil {
+		log.Fatalf("服务器启动失败: %v", err)
 	}
 }

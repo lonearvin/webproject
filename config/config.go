@@ -44,7 +44,9 @@ func InitConfig() {
 		log.Fatalf("Error reading config file: %v", err)
 	}
 	AppConfig = &Config{}
-	err = viper.Unmarshal(AppConfig)
+	if err := viper.Unmarshal(AppConfig); err != nil {
+		log.Fatalf("Unable to decode config into struct: %v", err)
+	}
 	// 初始化数据库
 	InitDB()
 }

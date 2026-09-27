@@ -37,7 +37,8 @@ COPY . .
 # 复制前端构建产物
 COPY --from=frontend-builder /app/static/css/output.css ./static/css/
 
-RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o main .
+# -trimpath 去除本地路径，-ldflags="-s -w" 去除调试信息减小体积
+RUN CGO_ENABLED=0 GOOS=linux go build -trimpath -ldflags="-s -w" -o main .
 
 # 阶段3 - 运行阶段
 FROM docker.m.daocloud.io/library/alpine:3.20
